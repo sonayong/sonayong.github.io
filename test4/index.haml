@@ -1,0 +1,32 @@
+#log
+%button#clear-log X
+%h1 Devicemotion API Demo v6
+
+/////////////////////
+/////////////////////
+
+%h3 Device Motion
+
+%div
+  %b Coordinates (beta, gamma, alpha): 
+  (<span id='beta'></span>, <span id='gamma'></span>, <span id='alpha'></span>)
+
+%h3 Device Orientation
+
+%div
+  %h4 Acceleration: 
+  %b (x, y, z) m/s^2: 
+  (<span id='acceleration-x'></span>, <span id='acceleration-y'></span>, <span id='acceleration-z'></span>)
+  
+%div
+  %h4 Acceleration including gravity:
+  %b (x, y, z) m/s^2: 
+  (<span id='accelerationIncludingGravity-x'></span>, <span id='accelerationIncludingGravity-y'></span>, <span id='accelerationIncludingGravity-z'></span>)
+
+%div
+  %h4 Rotation Rate
+  %b (beta, gamma, alpha): 
+  (<span id='rotationRate-beta'></span>, <span id='rotationRate-gamma'></span>, <span id='rotationRate-gamma'></span>)
+
+#demo
+  #item &uarr;
