@@ -68,8 +68,6 @@ if (window.DeviceOrientationEvent){
 window.addEventListener('deviceorientation', update, true);
 
 function update(event){
-var message = document.querySelector('#message');
-message.innerHTML = "Alpha is:"+event.alpha+", Beta is:"+event.beta+", and Gamma is:"+event.gamma+"";
 document.body.style.backgroundColor = "rgb( "+Math.abs(event.alpha)+", "+Math.abs(event.beta)+", "+Math.abs(event.gamma)+" )";
 }
 
