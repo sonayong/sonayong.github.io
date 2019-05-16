@@ -1,0 +1,121 @@
+<html manifest="cam.manifest"><head>
+<link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+<style type="text/css">
+@-o-viewport {
+  width: device-width;
+  height: device-height;
+}
+body{
+	background-color: #333;
+	color: #fff;
+	font-family: 'Nobile', sans-serif;
+}
+#container{
+	width: 100%;
+}
+canvas{
+	border: 1px solid #ccc;
+}
+video{
+	margin-bottom: 10px;
+	width: 150px;
+	height: 225px;
+}
+#button{
+	font-size: 1.0em;
+	margin-bottom: 10px;
+	/*padding-left: 65px;*/
+}
+#left{
+	float: left;
+	width: 50%;
+}
+#right{
+	padding-top: 5px;
+	float: right;
+	width: 45%;
+}
+#footer{
+	clear: both;
+	color: #fff;
+}
+a:visited{
+	color: #fff;
+}
+#warning{
+	color: red;
+	font-size: 0.9em;
+	text-shadow: 1px 1px 2px black;
+}
+
+.garden {
+  position: relative;
+  width : 200px;
+  height: 200px;
+  border: 5px solid #CCC;
+  border-radius: 10px;
+}
+.ball {
+  position: absolute;
+  top   : 90px;
+  left  : 90px;
+  width : 20px;
+  height: 20px;
+  background: green;
+  border-radius: 100%;
+}
+
+
+</style>
+<meta name="viewport" content="width=device-width, height=device-height">
+</head>
+<body>
+<h1>Get Device Orientation Info</h1>
+<div id="warning"></div>
+<div id="container">
+
+
+<div class="garden">
+  <div class="ball"></div>
+</div>
+<pre class="output"></pre>
+
+
+</div>
+<script type="text/javascript">
+if (window.DeviceOrientationEvent){
+window.addEventListener('deviceorientation', update, true);
+function update(event){
+
+var ball   = document.querySelector('.ball');
+var garden = document.querySelector('.garden');
+var output = document.querySelector('.output');
+var maxX = garden.clientWidth  - ball.clientWidth;
+var maxY = garden.clientHeight - ball.clientHeight;
+function handleOrientation(event) {
+  var x = event.beta;  // In degree in the range [-180,180]
+  var y = event.gamma; // In degree in the range [-90,90]
+  output.innerHTML  = "beta : " + x + "\n";
+  output.innerHTML += "gamma: " + y + "\n";
+  // Because we don't want to have the device upside down
+  // We constrain the x value to the range [-90,90]
+  if (x >  90) { x =  90};
+  if (x < -90) { x = -90};
+  // To make computation easier we shift the range of 
+  // x and y to [0,180]
+  x += 90;
+  y += 90;
+  // 10 is half the size of the ball
+  // It center the positionning point to the center of the ball
+  ball.style.top  = (maxX*x/180 - 10) + "px";
+  ball.style.left = (maxY*y/180 - 10) + "px";
+
+
+
+}
+} else {
+	var warning = document.querySelector("#warning");
+	warning.innerHTML = "This demo needs a browser which implements the W3C DeviceOrientation specification (in particular, the 'deviceorientation' event). Please use a browser which does so to experience this demo properly.";
+}
+</script>
+</body></html>
