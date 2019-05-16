@@ -1,90 +1,31 @@
+var ball   = document.querySelector('.ball');
+var garden = document.querySelector('.garden');
+var output = document.querySelector('.output');
 
-$(document).ready(function(){
+var maxX = garden.clientWidth  - ball.clientWidth;
+var maxY = garden.clientHeight - ball.clientHeight;
 
-$('#tab-week1').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week1').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week1').show();
-});
+function handleOrientation(event) {
+  var x = event.beta;  // In degree in the range [-180,180]
+  var y = event.gamma; // In degree in the range [-90,90]
 
-$('#tab-week2').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week2').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week2').show();
-});
+  output.innerHTML  = "beta : " + x + "\n";
+  output.innerHTML += "gamma: " + y + "\n";
 
-$('#tab-week3').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week3').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week3').show();
-});
+  // Because we don't want to have the device upside down
+  // We constrain the x value to the range [-90,90]
+  if (x >  90) { x =  90};
+  if (x < -90) { x = -90};
 
-$('#tab-week4').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week4').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week4').show();
-});
+  // To make computation easier we shift the range of 
+  // x and y to [0,180]
+  x += 90;
+  y += 90;
 
-$('#tab-week5').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week5').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week5').show();
-});
+  // 10 is half the size of the ball
+  // It center the positionning point to the center of the ball
+  ball.style.top  = (maxX*x/180 - 10) + "px";
+  ball.style.left = (maxY*y/180 - 10) + "px";
+}
 
-$('#tab-week6').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week6').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week6').show();
-});
-
-$('#tab-week7').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week7').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week7').show();
-});
-
-$('#tab-week8').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week8').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week8').show();
-});
-
-$('#tab-week9').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week9').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week9').show();
-});
-
-$('#tab-week10').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week10').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week10').show();
-});
-
-$('#tab-week11').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week11').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week11').show();
-});
-
-$('#tab-week12').click(function(){
-    $('.tab').css('background','rgba(231, 234, 237, 1)').css('border','0px').css('border-bottom','1px solid #ccc').css('border-radius','0px').css('z-index','1');
-    $('#tab-week12').css('background','#fff').css('border','1px solid #ccc').css('border-bottom','0px').css('border-radius','10px 10px 0px 0px').css('z-index','2');
-    $('.content').hide();
-    $('#content-week12').show();
-});
-
-
-
-});
+window.addEventListener('deviceorientation', handleOrientation);
