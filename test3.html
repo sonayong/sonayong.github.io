@@ -18,8 +18,8 @@ var elem = document.getElementById("view3d");
 
 window.addEventListener("deviceorientation", function(e) {
   var transform = "rotateZ(" + ( e.alpha - 180 ) + "deg) " +
-    "rotateX(" + e.beta + "deg) " +
-    "rotateY(" + ( -e.gamma ) + "deg)";
+    "translateX(" + e.beta + "vw) " +
+    "translateY(" + ( -e.gamma ) + "vw)";
   
   elem.style.WebkitTransform = transform;
   elem.style.MozTransform = transform;
