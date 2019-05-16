@@ -17,9 +17,9 @@
 var elem = document.getElementById("view3d");
 
 window.addEventListener("deviceorientation", function(e) {
-  var transform = "rotateZ(" + ( e.alpha ) + "deg) " +
-    "translateX(" + e.beta + "vw) ";
-  
+  var transform = "rotateZ(" + ( e.alpha - 180 ) + "deg) " +
+    "translateX(" + ( e.beta - 180 ) + "px) ";
+  - 180
   elem.style.WebkitTransform = transform;
   elem.style.MozTransform = transform;
   elem.style.Transform = transform;
