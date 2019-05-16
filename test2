@@ -1,0 +1,107 @@
+<html>
+<body>
+
+<p>Device orientation and motion test for devices with acceleromters</p>
+<div class="wrapper">
+  <div class="inner">
+    <div class="groove">
+      <div class="ball"></div>
+    </div>
+    <ul>
+      <li>Absolute: <span class="absolute"></span></li>
+      <li>Alpha: <span class="alpha"></span></li>
+      <li>Beta: <span class="beta"></span></li>
+      <li>Gamma: <span class="gamma"></span></li>
+      <li>Acceleration X: <span class="accelerationx"></span></li>
+      <li>Acceleration Y: <span class="accelerationy"></span></li>
+      <li>Acceleration Z: <span class="accelerationz"></span></li>
+      <li>Interval: <span class="interval"></span></li>
+    </ul>
+  </div>
+</div>
+
+<style>
+body {
+  text-align: center;
+}
+
+.wrapper {
+  display: table;
+  width: 100%;
+  height: 100vh;
+}
+
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+* {
+  font-size: 24px;
+}
+
+span {
+  display: inline-block;
+  width: 100px;
+  color: green;
+}
+
+.groove {
+  display: inline-block;
+  width: 400px;
+  height: 50px;
+  background: teal;
+  position: relative;
+}
+
+.ball {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -25px;
+}
+</style>
+
+<script>
+window.addEventListener("deviceorientation", handleOrientation, true);
+
+function handleOrientation(event) {
+  var absolute = event.absolute;
+  var alpha    = event.alpha;
+  var beta     = event.beta;
+  var gamma    = event.gamma;
+  var ballPos = (gamma/90)*200;
+  
+  $('.absolute').html(absolute);
+  $('.alpha').html(alpha.toFixed(3));
+  $('.beta').html(beta.toFixed(3));
+  $('.gamma').html(gamma.toFixed(3));
+  $('.ball').css('transform','translateX(' + ballPos + 'px)');
+  
+  
+}
+
+window.addEventListener("devicemotion", handleMotion, true);
+
+function handleMotion(event) {
+  var acceleration = event.acceleration;
+  var interval = event.interval;
+  $('.accelerationx').html(acceleration.x.toFixed(3));
+  $('.accelerationy').html(acceleration.y.toFixed(3));
+  $('.accelerationz').html(acceleration.z.toFixed(3));
+  $('.interval').html(interval);
+}
+</script>
+
+</body>
+</html>
