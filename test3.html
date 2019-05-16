@@ -1,0 +1,30 @@
+<html>
+  <body>
+<div id="view3d"></div>
+  
+<style>
+  #view3d {
+  position: absolute;
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  left: 50px;
+}
+  </style>
+
+<script>
+var elem = document.getElementById("view3d");
+
+window.addEventListener("deviceorientation", function(e) {
+  var transform = "rotateZ(" + ( e.alpha - 180 ) + "deg) " +
+    "rotateX(" + e.beta + "deg) " +
+    "rotateY(" + ( -e.gamma ) + "deg)";
+  
+  elem.style.WebkitTransform = transform;
+  elem.style.MozTransform = transform;
+  elem.style.Transform = transform;
+});
+</script>
+  </body>
+</html>
