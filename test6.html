@@ -129,14 +129,14 @@
 			velocity.x *= decay;
 		}
 		
-		if( offset.top <= -(ball.height()/2) )
+		if( offset.top <= -(ball.height()) )
 		{
 			velocity.y = - Math.abs( velocity.y * bounceDecay );
 		}
-// 		else if( offset.top >= (board.height() - (ball.height()/2)) )
-// 		{
-// 			velocity.y = Math.abs( velocity.y * bounceDecay );
-// 		}
+		else if( offset.top >= (board.height() - (ball.height()/2)) )
+		{
+			velocity.y = Math.abs( velocity.y * bounceDecay );
+		}
 		else 
 		{
 			velocity.y = parseInt( velocity.y );
