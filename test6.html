@@ -88,8 +88,8 @@
 		$('#details').html( eventDetails );
 	}
 	
-	var decay = 1;
-	var bounceDecay = 1;
+	var decay = .9;
+	var bounceDecay = .95;
 	var maxVelocity = 100;
 	
 	function updateVelocity( event ) 
@@ -117,11 +117,11 @@
 	{
 		if( offset.left <= -(ball.width()/2) )
 		{
-			velocity.x = Math.abs( velocity.x );
+			velocity.x = Math.abs( velocity.x * bounceDecay );
 		}
 		else if( offset.left >= (board.width() - (ball.width()/2)) )
 		{
-			velocity.x = - Math.abs( velocity.x );
+			velocity.x = - Math.abs( velocity.x * bounceDecay );
 		}
 		else
 		{
@@ -131,11 +131,11 @@
 		
 		if( offset.top <= -(ball.height()/2) )
 		{
-			velocity.y = - Math.abs( velocity.y );
+			velocity.y = - Math.abs( velocity.y * bounceDecay );
 		}
 		else if( offset.top >= (board.height() - (ball.height()/2)) )
 		{
-			velocity.y = Math.abs( velocity.y );
+			velocity.y = Math.abs( velocity.y * bounceDecay );
 		}
 		else 
 		{
@@ -151,6 +151,7 @@
 	}
 	
 </script>
+
 
 </head>
 
