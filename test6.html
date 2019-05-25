@@ -115,33 +115,33 @@
 	
 	function updateBall()
 	{
-// 		if( offset.left <= -(ball.width()/2) )
-// 		{
+		if( offset.left <= -(ball.width()/2) )
+		{
 // 			velocity.x = Math.abs( velocity.x * bounceDecay );
-// 		}
-// 		else if( offset.left >= (board.width() - (ball.width()/2)) )
-// 		{
+		}
+		else if( offset.left >= (board.width() - (ball.width()/2)) )
+		{
 // 			velocity.x = - Math.abs( velocity.x * bounceDecay );
-// 		}
-// 		else
-// 		{
-// 			velocity.x = parseInt( velocity.x );
-// 			velocity.x *= decay;
-// 		}
+		}
+		else
+		{
+			velocity.x = parseInt( velocity.x );
+			velocity.x *= decay;
+		}
 		
-// 		if( offset.top <= -(ball.height()/2) )
-// 		{
+		if( offset.top <= -(ball.height()/2) )
+		{
 // 			velocity.y = - Math.abs( velocity.y * bounceDecay );
-// 		}
-// 		else if( offset.top >= (board.height() - (ball.height()/2)) )
-// 		{
+		}
+		else if( offset.top >= (board.height() - (ball.height()/2)) )
+		{
 // 			velocity.y = Math.abs( velocity.y * bounceDecay );
-// 		}
-// 		else 
-// 		{
-// 			velocity.y = parseInt( velocity.y );
-// 			velocity.y *= decay;
-// 		}
+		}
+		else 
+		{
+			velocity.y = parseInt( velocity.y );
+			velocity.y *= decay;
+		}
 		
 		offset.left += velocity.x;
 		offset.top -= velocity.y;
