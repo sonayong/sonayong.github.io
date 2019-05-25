@@ -113,42 +113,42 @@
 		}
 	}
 	
-// 	function updateBall()
-// 	{
-// 		if( offset.left <= -(ball.width()/2) )
-// 		{
-// 			velocity.x = Math.abs( velocity.x );
-// 		}
-// 		else if( offset.left >= (board.width() - (ball.width()/2)) )
-// 		{
-// 			velocity.x = - Math.abs( velocity.x );
-// 		}
+	function updateBall()
+	{
+		if( offset.left <= -(ball.width()/2) )
+		{
+			velocity.x = Math.abs( velocity.x );
+		}
+		else if( offset.left >= (board.width() - (ball.width()/2)) )
+		{
+			velocity.x = - Math.abs( velocity.x );
+		}
 // 		else
 // 		{
 // 			velocity.x = parseInt( velocity.x );
 // 			velocity.x *= decay;
 // 		}
 		
-// 		if( offset.top <= -(ball.height()/2) )
-// 		{
-// 			velocity.y = - Math.abs( velocity.y );
-// 		}
-// 		else if( offset.top >= (board.height() - (ball.height()/2)) )
-// 		{
-// 			velocity.y = Math.abs( velocity.y );
-// 		}
-// 		else 
-// 		{
-// 			velocity.y = parseInt( velocity.y );
-// 			velocity.y *= decay;
-// 		}
+		if( offset.top <= -(ball.height()/2) )
+		{
+			velocity.y = - Math.abs( velocity.y );
+		}
+		else if( offset.top >= (board.height() - (ball.height()/2)) )
+		{
+			velocity.y = Math.abs( velocity.y );
+		}
+		else 
+		{
+			velocity.y = parseInt( velocity.y );
+			velocity.y *= decay;
+		}
 		
-// 		offset.left += velocity.x;
-// 		offset.top -= velocity.y;
+		offset.left += velocity.x;
+		offset.top -= velocity.y;
 		
 		
-// 		$('#ball').offset( offset );
-// 	}
+		$('#ball').offset( offset );
+	}
 	
 </script>
 
