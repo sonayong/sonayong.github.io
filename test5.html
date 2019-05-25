@@ -70,7 +70,7 @@ function deviceOrientationHandler(e) {
   beta.innerText = e.beta.toFixed();
   gamma.innerText = e.gamma.toFixed();
 
-  var rotation = "rotate("+ e.alpha +"deg) rotate3d(1,0,0, "+ (e.gamma * -1)+"deg)";
+  var rotation = "transform("+ e.alpha +"px) transform3d(1,0,0, "+ (e.gamma * -1)+"px)";
   moon.style.webkitTransform = rotation;
   moon.style.transform = rotation;
 };
