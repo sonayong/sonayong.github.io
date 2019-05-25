@@ -1,0 +1,111 @@
+
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="creature">
+</div>
+
+<div id="accelX"></div>
+
+<div id="accelY"></div>
+
+<style>
+#creature{
+  width: 60px;
+  height: 60px;
+  background-image: url('https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/fb/Episode_icon.PNG/revision/latest?cb=20100512010029');
+  position: absolute;
+}
+
+#accelX{
+  position: absolute;
+  top: 80px;
+}
+
+#accelY{
+  position: absolute;
+  top: 100px;
+}
+</style>
+<script>
+
+
+window.onload = function(){
+  //document is fully loaded
+  
+  function Creature(){
+  this.el = document.getElementById('creature');
+  this.el.style.left = '100px';
+  this.el.style.top = '100px';
+  
+  this.moveLeft = function(){
+    let prevVal = parseInt(this.el.style.left);
+    
+    this.el.style.left = prevVal - 1 + 'px';
+  }
+  
+  this.moveRight = function(){
+    let prevVal = parseInt(this.el.style.left);
+    
+    this.el.style.left = prevVal + 1 + 'px';
+  }
+  
+  this.moveUp = function(){
+    let prevVal = parseInt(this.el.style.top);
+    
+    this.el.style.top = prevVal - 1 + 'px';
+  }
+  
+  this.moveDown = function(){
+    let prevVal = parseInt(this.el.style.top);
+    
+    this.el.style.top = prevVal + 1 + 'px';
+  }
+}
+
+  
+  
+  function deviceMotionHandler(event){
+    let accelerationX = event.accelerationIncludingGravity.x;
+    let accelerationY = event.accelerationIncludingGravity.y;
+    
+    document.getElementById('accelX').innerText = accelerationX + ' m/s2';
+    document.getElementById('accelY').innerText = accelerationY + ' m/s2';
+    
+    //creature moving
+    if(accelerationX > 0.5){
+      //move left
+      Creature.moveLeft();
+    }else if(accelerationY < -0.5){
+      //move right
+      Creature.moveRight();
+    }
+    
+    if(accelerationY > 0.5){
+      //move left
+      Creature.moveUp();
+    }else if(accelerationY < -0.5){
+      //move right
+      Creature.moveDown();
+    }
+  }
+  
+  if(window.DeviceMotionEvent){
+    //new creature object
+    var Creature = new Creature();
+    
+    //device motion event listener
+    window.addEventListener('devicemotion', deviceMotionHandler, false);
+  }
+
+}
+
+</script>
+
+</body>
+</html>
