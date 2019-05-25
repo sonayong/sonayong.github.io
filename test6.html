@@ -129,7 +129,7 @@
 			velocity.x *= decay;
 		}
 		
-		if( offset.top <= -(ball.height()) )
+		if( offset.top <= -(ball.height()/2) )
 		{
 			velocity.y = - Math.abs( velocity.y * bounceDecay );
 		}
