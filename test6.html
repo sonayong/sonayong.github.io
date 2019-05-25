@@ -131,11 +131,11 @@
 		
 		if( offset.top <= -(ball.height()/2) )
 		{
-			velocity.y = - Math.abs( velocity.y * bounceDecay );
+			velocity.y = - Math.abs( velocity.y  );
 		}
 		else if( offset.top >= (board.height() - (ball.height()/2)) )
 		{
-			velocity.y = Math.abs( velocity.y * bounceDecay );
+			velocity.y = Math.abs( velocity.y  );
 		}
 		else 
 		{
