@@ -55,8 +55,8 @@
 		board = $('#board');
 		ball = $('#ball');
 		
-		offset.left = (board.width()-ball.width())/1;
-		offset.top = (board.height()-ball.height())/1;
+		offset.left = (board.width()-ball.width())/10;
+		offset.top = (board.height()-ball.height())/10;
 		
 		$('#ball').offset( offset );
 		interval = setInterval( updateBall, 10 );
