@@ -8,108 +8,148 @@
 </head>
 <body>
 
-	<h1>Device Orientation - Demo</h1>
-<p>HTML 5 device orientation demo, currently only supported by Webkit (Google Chrome 9+) and Mozilla (Firefox 3.6+) based browsers.</p>
-
-<p> <a href="http://www.juurlink.org/2011/02/html-5-accelerometer/" target="_blank">HTML 5 Accelerometer</a></p>
-<p style="display: inline-block;" id="warning">Warning: Cannot receive device orientation events, this browser is not supported.</p>
-<div id="canvas">
-  <div id="middle"></div>
-  <div id="ball"></div>
+<div id="gyroArea">
+  <div class="ball"></div>
 </div>
-	
 	<style>
-		   h1 {
-     font-family: verdana, sans-serif;
-     font-weight: bold;
-     font-size: 28px;
-   }
-   
-   p {
-     font-family: verdana, sans-serif;
-     font-size: 12px;
-   }
-   
-   #canvas {
-     width: 200px;
-     height: 200px;
-     border: 5px solid #ddd;
-     border-radius: 10px;
-     -moz-border-radius: 10px;
-   }
-   
-   #middle {
-     background-color: #aaa;
-     position: relative;
-     width: 4px;
-     height: 4px;
-     left: 98px;
-     top: 98px;
-   }
-   
-   #ball {
-     background-color: green;
-     position: relative;
-     width: 20px;
-     height: 20px;
-     left: 90px;
-     top: 90px;
-     border-radius: 20px;
-     -moz-border-radius: 20px;
-     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
-     -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
-     -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
-     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 12px);
-     background-image: -webkit-gradient(linear, 0 0, 0 12, from(rgba(255, 255, 255, .5)), to(rgba(255, 255, 255, 0)));
-   }
-   
-   #warning {
-     display: none;
-     padding: 5px 10px;
-     font-weight: bold;
-   }
+		html, body {
+  background: #000;
+}
+#gyroArea {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  background: #000;
+  height: 100%;
+  width: 100%;
+}
+
+.ball {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  background: #fff;
+}
 	</style>
 	<script>
-		    var initialX = null;
-    var initialY = null;
+		   $(function(){
 
-    var ball = document.getElementById('ball');
+  $gyroArea = $('#gyroArea');
+  $ball = $('.ball');
 
-    function handleOrientationEvent(event) {
+  // ジャイロセンサーが使える場合には、ボールを傾きによって動かせるようにする。
+  var balls = $ball,
+    bounceRaito = 0.4,
+    bounceLimitSpeed = 1.5,
+    min = Math.min,
+    max = Math.max,
+    abs = Math.abs,
+    floor = Math.floor,
+    rValues = [1.0, 0.76, 0.8, 0.7, 0.6, 0.55, 0.612, 0.9, 0.65, 0.95, 0.62, 0.87, 0.33, 0.45, 0.23, 0.987, 0.67, 0.99, 0.34, 0.77, 0.69, 0.44, 1.2, 1.05],
+    ballCanMove = false,
+    areaHeight = $gyroArea.height(),
+    areaWidth = $gyroArea.width(),
+    bottomLimit = Math.floor(areaHeight - $ball.height()),
+    rightLimit = Math.floor(areaWidth - $ball.width());
 
-      var x = event.beta ? event.beta : event.y * 90;
-      var y = event.gamma ? event.gamma : event.x * 90;
+  //console.debug('limit = ', bottomLimit, rightLimit, balls);
 
-      window.console && console.info('Raw position: x, y: ', x, y);
+  // ボールを動かすサインを出す。
+  setTimeout(function() {ballCanMove = true; /*console.debug('gyro start.');*/ }, 2000);
 
-      if (!initialX && !initialY) {
+  // 回転を取得する。
+  window.ondeviceorientation = function(event) {
+    //console.debug('ondeviceorientation is called.');
 
-        initialX = x;
-        initialY = y;
+    // 回転量
+    var alpha = event.alpha;   // z-axis
+    var beta = event.beta;     // x-axis
+    var gamma = event.gamma;   // y-axis
 
-      } else {
+    // ボールを動かす。
+    if (ballCanMove) {
+      balls.each(function(index, ball) {
 
-        var positionX = initialX - x;
-        var positionY = initialY - y;
+        // betaの値が正なら下へ、負なら上へ動かす。
+        var oldSpeed = ball.speedY || 0;
+        var y = parseInt(ball.style.top || 0);
+  
+        if (y === bottomLimit && oldSpeed === 0 && beta > 0) {
+          // 何もしない
+        } else if (y === 0 && oldSpeed === 0 && beta < 0) {
+          // 何もしない
+        } else {
+          var speed = oldSpeed + ((beta) / 300) * rValues[index%rValues.length];
+          var y = y + speed;
+          y =  max(0, min(bottomLimit, y));
+          
+          ball.style.top = y + 'px';
+          //$ball.css('-webkit-transform', 'translateY(' + y + 'px)');
+          // $ball.transform('translateY', y + 'px');
 
-        ball.style.top = (90 + positionX * 5) + 'px';
-        ball.style.left = (90 + positionY * 5) + 'px';
-      }
+          ball.speedY = speed;
+          // ここからは跳ね返りの実装
+          if (y == bottomLimit && oldSpeed > bounceLimitSpeed) {
+            ball.speedY = -speed * bounceRaito;
+          } else if (y === bottomLimit && oldSpeed <= bounceLimitSpeed) {
+            ball.speedY = 0;
+          }
+          if (y == 0 && oldSpeed < -bounceLimitSpeed) {
+            ball.speedY = -speed * bounceRaito;
+          } else if (y === 0 && oldSpeed >= -bounceLimitSpeed) {
+            ball.speedY = 0;
+          }
+        }
+
+        // gammaの値が正なら右へ、負なら左へ動かす。
+        var oldSpeed = ball.speedX || 0;
+        var x = parseInt(ball.style.left || 0);
+
+        if (x === rightLimit && oldSpeed === 0 && gamma > 0) {
+          // 何もしない
+        } else if (x === 0 && oldSpeed === 0 && gamma < 0) {
+          // 何もしない
+        } else {
+          var speed = oldSpeed + ((gamma) / 300) * rValues[index%rValues.length];
+          var x = x + speed;
+          x =  max(0, min(rightLimit, x));
+
+          ball.style.left = x + 'px';
+          //$ball.css('-webkit-transform', 'translateX(' + x + 'px)');
+          //$ball.transform('translateX', x + 'px');
+
+          ball.speedX = speed;
+          // ここからは跳ね返りの実装
+          if (x == rightLimit && oldSpeed > bounceLimitSpeed) {
+            ball.speedX = -speed * bounceRaito;
+          } else if (x === rightLimit && oldSpeed <= bounceLimitSpeed) {
+            ball.speedX = 0;
+          }
+          if (x == 0 && oldSpeed < -bounceLimitSpeed) {
+            ball.speedX = -speed * bounceRaito;
+          } else if (x === 0 && oldSpeed >= -bounceLimitSpeed) {
+            ball.speedX = 0;
+          }
+        }
+
+      });
     }
+  };
 
-    function isEventFired() {
-      if (!initialX && !initialY) {
-        var warningElement = document.getElementById('warning');
-        warningElement.innerText = 'Warning: Cannot receive device orientation events, this browser is not supported.';
-        warningElement.style.display = 'inline-block';
-      }
-    }
+  // デバイスの向きが変わったら、横幅の再計算をする。
+  window.onorientationchange = function () {
+    //console.debug('orientationchange: is called.');
+    areaHeight = $gyroArea.height(),
+    areaWidth = $gyroArea.width(),
+    bottomLimit = Math.floor(areaHeight - $ball.height()),
+    rightLimit = Math.floor(areaWidth - $ball.width())
+  };
 
-    // Webkit en Mozilla variant beide registreren.
-    window.addEventListener("MozOrientation", handleOrientationEvent, true);
-    window.addEventListener("deviceorientation", handleOrientationEvent, true);
-
-    setTimeout(isEventFired, 2000);
+});
 	</script>
  
 </body>
