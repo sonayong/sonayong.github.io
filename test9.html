@@ -67,9 +67,11 @@
 
   $gyroArea = $('#gyroArea');
   $ball = $('.ball');
+  $ayfloor = $('.ayfloor');
 
   // 자이로 센서를 사용할 경우에는 공을 기울기에 의해 움직일 수있게하는
   var balls = $ball,
+    ayfloor = $ayfloor,
     bounceRaito = 0.4,
     bounceLimitSpeed = 1.5,
     min = Math.min,
