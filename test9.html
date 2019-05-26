@@ -7,5 +7,163 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	<div class="visual-wrap">
+	<div class="visual"></div>
+</div>
+
+<h4>Device Orientation</h4>
+<div class="absolute">Absolute: <span>0</span></div>
+<div class="alpha">Alpha (Z-axis): <span>0</span></div>
+<div class="beta">Beta (X-axis): <span>0</span></div>
+<div class="gamma">Gamma (Y-axis): <span>0</span></div>
+
+<h4>Device Acceleration</h4>
+<div class="motion-x">X: <span>0</span></div>
+<div class="motion-y">Y: <span>0</span></div>
+<div class="motion-z">Z: <span>0</span></div>
+
+<h4>Device Acceleration w/ Gravity</h4>
+<div class="grav-x">X: <span>0</span></div>
+<div class="grav-y">Y: <span>0</span></div>
+<div class="grav-z">Z: <span>0</span></div>
+	
+	<style>
+		
+		html, body
+	font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+   font-weight 300
+div
+	position relative
+	width 320px
+	
+	span
+		position absolute
+		right 0
+		
+.visual-wrap
+	// transform-style preserve-3d
+	position relative
+	perspective 300px
+	height 200px
+	margin 30px
+	float right
+.visual
+	height 200px
+	width 110px
+	background #444
+		
+	</style>
+	<script>
+		
+		let dom = {};
+dom.absolute = $('.absolute span');
+dom.alpha = $('.alpha span');
+dom.beta = $('.beta span');
+dom.gamma = $('.gamma span');
+
+dom.motionX = $('.motion-x span');
+dom.motionY = $('.motion-y span');
+dom.motionZ = $('.motion-z span');
+
+dom.gravX = $('.grav-x span');
+dom.gravY = $('.grav-y span');
+dom.gravZ = $('.grav-z span');
+
+const deviceOffset = {
+	x: 0,
+	y: 0,
+	z: 0
+};
+
+let degtorad = Math.PI / 180; // Degree-to-Radian conversion
+
+
+
+let getQuaternion = (alpha, beta, gamma) => {
+  var _x = beta  ? beta  * degtorad : 0; // beta value
+  var _y = gamma ? gamma * degtorad : 0; // gamma value
+  var _z = alpha ? alpha * degtorad : 0; // alpha value
+
+  var cX = Math.cos( _x/2 );
+  var cY = Math.cos( _y/2 );
+  var cZ = Math.cos( _z/2 );
+  var sX = Math.sin( _x/2 );
+  var sY = Math.sin( _y/2 );
+  var sZ = Math.sin( _z/2 );
+
+  //
+  // ZXY quaternion construction.
+  //
+  var w = cX * cY * cZ - sX * sY * sZ;
+  var x = sX * cY * cZ - cX * sY * sZ;
+  var y = cX * sY * cZ + sX * cY * sZ;
+  var z = cX * cY * sZ + sX * sY * cZ;
+
+  return [ w, x, y, z ];
+}
+
+
+let handleOrientation = () => {
+	const absolute = event.absolute;
+  const alpha    = event.alpha;
+  const beta     = event.beta;
+  const gamma    = event.gamma;
+	
+	const quat = getQuaternion(Math.abs(alpha), Math.abs(beta), Math.abs(gamma));
+	// check, should == 1
+	// console.log(quat[0] * quat[0] + quat[1] * quat[1] + quat[2] * quat[2] + quat[3] * quat[3])
+	console.log(quat)
+	
+	// avoid gimbal lock
+	// if (beta > 85 && beta < 95 ||
+	// 		beta > -85 && beta < -95) {
+	// 	return;
+	// }
+	
+	
+	dom.absolute.text(absolute)
+	dom.alpha.text(alpha >> 0)
+	dom.beta.text(beta >> 0)
+	dom.gamma.text(gamma >> 0)
+	
+	TweenMax.to(
+		$('.visual'), 
+		0.01, 
+		{
+			rotationX: beta + deviceOffset.x, 
+			rotationY: gamma + deviceOffset.y,
+			rotationZ: alpha + deviceOffset.z
+		}
+	);
+};
+
+let handleMotion = () => {
+	const accel = event.acceleration;
+	const accelGrav = event.accelerationIncludingGravity;
+	const rotationRate = event.rotationRate;
+	
+	dom.motionX.text(accel.x >> 0);
+	dom.motionY.text(accel.y >> 0);
+	dom.motionZ.text(accel.z >> 0);
+
+	dom.gravX.text(accelGrav.x >> 0);
+	dom.gravY.text(accelGrav.y >> 0);
+	dom.gravZ.text(accelGrav.z >> 0);
+};
+
+
+if (window.DeviceOrientationEvent) {
+	window.addEventListener("deviceorientation", handleOrientation, true);
+} else {
+	console.log("device does not support DeviceOrientation");
+}
+
+if (window.DeviceMotionEvent) {
+	window.addEventListener("devicemotion", handleMotion, true);
+} else {
+	console.log("device does not support DeviceMotion");
+}
+
+	</script>
 </body>
 </html>
