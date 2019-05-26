@@ -55,8 +55,8 @@
 		board = $('#board');
 		ball = $('#ball');
 		
-		offset.left = (board.width()-ball.width())/4;
-		offset.top = (board.height()-ball.height())/4;
+		offset.left = (board.width()-ball.width())/2;
+		offset.top = (board.height()-ball.height())/2;
 		
 		$('#ball').offset( offset );
 		interval = setInterval( updateBall, 10 );
@@ -89,7 +89,7 @@
 	}
 	
 	var decay = .9;
-	var bounceDecay = .95;
+	var bounceDecay = .000001;
 	var maxVelocity = 100;
 	
 	function updateVelocity( event ) 
