@@ -41,7 +41,7 @@
   $gyroArea = $('#gyroArea');
   $ball = $('.ball');
 
-  // ジャイロセンサーが使える場合には、ボールを傾きによって動かせるようにする。
+  // 자이로 센서를 사용할 경우에는 공을 기울기에 의해 움직일 수있게하는
   var balls = $ball,
     bounceRaito = 0.4,
     bounceLimitSpeed = 1.5,
@@ -58,30 +58,30 @@
 
   //console.debug('limit = ', bottomLimit, rightLimit, balls);
 
-  // ボールを動かすサインを出す。
+  // 공을 이동 사인을 낸다.
   setTimeout(function() {ballCanMove = true; /*console.debug('gyro start.');*/ }, 2000);
 
-  // 回転を取得する。
+  // 회전을 얻을 수 있습니다.
   window.ondeviceorientation = function(event) {
     //console.debug('ondeviceorientation is called.');
 
-    // 回転量
+    // 회 전량
     var alpha = event.alpha;   // z-axis
     var beta = event.beta;     // x-axis
     var gamma = event.gamma;   // y-axis
 
-    // ボールを動かす。
+    // 공을 달린다.
     if (ballCanMove) {
       balls.each(function(index, ball) {
 
-        // betaの値が正なら下へ、負なら上へ動かす。
+        // beta 값이 양수이면 아래로, 음수이면 위로 이동한다.
         var oldSpeed = ball.speedY || 0;
         var y = parseInt(ball.style.top || 0);
   
         if (y === bottomLimit && oldSpeed === 0 && beta > 0) {
-          // 何もしない
+          // 아무것도
         } else if (y === 0 && oldSpeed === 0 && beta < 0) {
-          // 何もしない
+          // 아무것도
         } else {
           var speed = oldSpeed + ((beta) / 300) * rValues[index%rValues.length];
           var y = y + speed;
@@ -92,7 +92,7 @@
           // $ball.transform('translateY', y + 'px');
 
           ball.speedY = speed;
-          // ここからは跳ね返りの実装
+          // 여기에서 반사의 구현
           if (y == bottomLimit && oldSpeed > bounceLimitSpeed) {
             ball.speedY = -speed * bounceRaito;
           } else if (y === bottomLimit && oldSpeed <= bounceLimitSpeed) {
@@ -105,14 +105,14 @@
           }
         }
 
-        // gammaの値が正なら右へ、負なら左へ動かす。
+        // gamma 값이 양수이면 오른쪽으로, 음수이면 왼쪽으로 이동한다.
         var oldSpeed = ball.speedX || 0;
         var x = parseInt(ball.style.left || 0);
 
         if (x === rightLimit && oldSpeed === 0 && gamma > 0) {
-          // 何もしない
+          // 아무것도
         } else if (x === 0 && oldSpeed === 0 && gamma < 0) {
-          // 何もしない
+          // 아무것도
         } else {
           var speed = oldSpeed + ((gamma) / 300) * rValues[index%rValues.length];
           var x = x + speed;
@@ -123,7 +123,7 @@
           //$ball.transform('translateX', x + 'px');
 
           ball.speedX = speed;
-          // ここからは跳ね返りの実装
+          // 여기에서 반사의 구현
           if (x == rightLimit && oldSpeed > bounceLimitSpeed) {
             ball.speedX = -speed * bounceRaito;
           } else if (x === rightLimit && oldSpeed <= bounceLimitSpeed) {
@@ -140,7 +140,7 @@
     }
   };
 
-  // デバイスの向きが変わったら、横幅の再計算をする。
+  // 장치의 방향이 바뀌면 폭의 재 계산을한다.
   window.onorientationchange = function () {
     //console.debug('orientationchange: is called.');
     areaHeight = $gyroArea.height(),
