@@ -72,11 +72,9 @@
 
   $gyroArea = $('#gyroArea');
   $ball = $('.ball');
-  $ayfloor = $('.ayfloor');
 
   // 자이로 센서를 사용할 경우에는 공을 기울기에 의해 움직일 수있게하는
   var balls = $ball,
-    ayfloor = $ayfloor,
     bounceRaito = 0.4,
     bounceLimitSpeed = 1.5,
     min = Math.min,
@@ -87,7 +85,7 @@
     ballCanMove = false,
     areaHeight = $gyroArea.height(),
     areaWidth = $gyroArea.width(),
-    bottomLimit = Math.floor(areaHeight - $ayfloor.height()),
+    bottomLimit = Math.floor(areaHeight - $ball.height()),
     rightLimit = Math.floor(areaWidth - $ball.width());
 
   //console.debug('limit = ', bottomLimit, rightLimit, balls);
@@ -179,7 +177,7 @@
     //console.debug('orientationchange: is called.');
     areaHeight = $gyroArea.height(),
     areaWidth = $gyroArea.width(),
-    bottomLimit = Math.floor(areaHeight - $ayfloor.height()),
+    bottomLimit = Math.floor(areaHeight - $ball.height()),
     rightLimit = Math.floor(areaWidth - $ball.width())
   };
 
