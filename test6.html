@@ -59,7 +59,7 @@
 		offset.top = (board.height()-ball.height())/2;
 		
 		$('#ball').offset( offset );
-		interval = setInterval( updateBall, 10 );
+		interval = setInterval( updateBall, 25 );
 	} );
 
 
@@ -73,9 +73,9 @@
 		try {
 			var accel = event.accelerationIncludingGravity;
 			eventDetails = "accelerationIncludingGravity: {" +
-								"<br>x: " + accel.x + 
-								"<br>y: " + accel.y + 
-								"<br>z: " + accel.z + 
+								"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x: " + accel.x + 
+								"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y: " + accel.y + 
+								"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z: " + accel.z + 
 						   "<br/>} <br/><br/>" + 
 						   "interval: " + event.interval;
 			updateVelocity( event );
@@ -89,7 +89,7 @@
 	}
 	
 	var decay = .9;
-	var bounceDecay = .0001;
+	var bounceDecay = .95;
 	var maxVelocity = 100;
 	
 	function updateVelocity( event ) 
