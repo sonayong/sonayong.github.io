@@ -7,147 +7,63 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div id="pendWrap">
-  <div id="pend">
-  </div>
-</div>
-	<style>
-		@import "bourbon";
 
-#pendWrap{
-		position: absolute;
-		top: 0;
-		left: 50%;
-   margin-left: -50px;
-		border: 1px solid red;
-	}
-	
-	#pend {
-		position: relative;
-		top: 200px;
-		left: 0;
-		width: 100px;
-		height: 100px;
-		border-radius: 12px;
-		background: green;	
-	}
-	</style>
-	<script>
-		
-		var orientation;
+  <h2>Device Orientation with HTML5</h2>
+  You need to be on a mobile device or use a laptop with accelerometer/orientation device.<p>
+            <div id="rawAccel"></div>
+            <div id="tiltFB"></div>
+            <div id="tiltLR"></div>
+            <div id="upDown"></div>
+ 
+  <img src="http://mainline.i3s.unice.fr/mooc/HTML5_Badge_256.png" id="imgLogo" class="logo">
+<script type="text/javascript">
+if (window.DeviceMotionEvent!=undefined) {
+  console.log("DeviceMotion is supported");
 
-function doOnOrientationChange() {
-  
-  switch (window.orientation) {
-		case -90:
-        orientation = "landscape_clockwise"
-        break;
-		case 90:
-			//landscape
-			orientation = 'landscape_anticlockwise';
-			break;
-		default:
-			//portrait;
-			orientation = 'portrait';
-			break;
-	}
-}
-
-
-
-
-var deviceOrientation = {
-	ax: 0,
-	ay: 0,
-	az: 0,
-	rotation: 0,
-	arAlpha: 0,
-	arBeta: 0,
-	arGamma: 0
-};
-window.ondevicemotion = function(event) {
-	deviceOrientation.ax = event.accelerationIncludingGravity.x
-	deviceOrientation.ay = event.accelerationIncludingGravity.y
-	deviceOrientation.az = event.accelerationIncludingGravity.z
-	deviceOrientation.rotation = event.rotationRate;
-	if (deviceOrientation.rotation != null) {
-		deviceOrientation.arAlpha = Math.round(deviceOrientation.rotation.alpha);
-		deviceOrientation.arBeta = Math.round(deviceOrientation.rotation.beta);
-		deviceOrientation.arGamma = Math.round(deviceOrientation.rotation.gamma);
-	}
-}
-
-// shim layer with setTimeout fallback
-window.requestAnimFrame = (function() {
-	return window.requestAnimationFrame ||
-		window.webkitRequestAnimationFrame ||
-		window.mozRequestAnimationFrame ||
-		window.oRequestAnimationFrame ||
-		window.msRequestAnimationFrame ||
-		function(callback) {
-			window.setTimeout(callback, 1000 / 60);
-		};
-})();
-
-
-
-
-var startR = 0,
-	accel = 0.24,
-	decel = 0.75,
-	divider = 2;
-
-var position = {
-		'rotation': 0
-	},
-	vr = 0,
-	pr = 0,
-	elasticity = 0.9,
-	strength = 0.03,
-	target = {
-		'rotation': 0
-	};
-
-function render() {
-	//this can be expanded on to take rotating into the "opposite" landscape direction.
-  
-  switch(orientation){
-    case "landscape_clockwise":
-        target.rotation = (deviceOrientation.ax * 7);
-      break;
-    case "landscape_anticlockwise":
-      target.rotation = -(deviceOrientation.ax * 7);
-      break;
+  window.addEventListener('devicemotion', function(eventData) {
+     // Grab the acceleration including gravity from the results
+     var acceleration = eventData.accelerationIncludingGravity;
+     // Display the raw acceleration data
+     var rawAcceleration = "[" +  Math.round(acceleration.x) + ", " + 
+     Math.round(acceleration.y) + ", " + Math.round(acceleration.z) + "]";
     
-    default:
-      target.rotation = deviceOrientation.ax * 7;
-      
-      
-  }
+     // Z is the acceleration in the Z axis, and if the device is facing up or down
+     var facingUp = -1;
+     if (acceleration.z > 0) {
+       facingUp = +1;
+     }
   
-  
-	
-	vr = target.rotation - position.rotation;
-	pr = pr * elasticity + vr * strength;
-	position.rotation += pr;
-
-	$('#pendWrap').css({
-		'transform': 'rotate(' + position.rotation + 'deg)'
-	});
+     // Convert the value from acceleration to degrees acceleration.x|y is the 
+     // acceleration according to gravity, we'll assume we're on Earth and divide 
+     // by 9.81 (earth gravity) to get a percentage value, and then multiply that 
+     // by 90 to convert to degrees.                                
+     var tiltLR = Math.round(((acceleration.x) / 9.81) * -90);
+     var tiltFB = Math.round(((acceleration.y + 9.81) / 9.81) * 90 * facingUp);
+    
+     document.querySelector("#rawAccel").innerHTML = "Raw acceleration" +  
+                                                   rawAcceleration;
+     document.querySelector("#tiltFB").innerHTML = "Tilt front/back : " + tiltFB;
+     document.querySelector("#tiltLR").innerHTML = "Tilt left/right : " + tiltLR;
+     document.querySelector("#upDown").innerHTML = "Face Up:Down : " + facingUp;
+    
+    
+     updateLogoOrientation(tiltLR, tiltFB);
+  }, false);
+} else {
+    alert("Not supported on your device or browser.  Sorry.");
 }
-
-// usage: 
-// instead of setInterval(render, 16) ....
-(function animloop() {
-	requestAnimFrame(animloop);
-	render();
-})();
-
-document.addEventListener("orientationchange", function(){
-  doOnOrientationChange();
-});
-doOnOrientationChange();
-
-	</script>
+ 
+function updateLogoOrientation(tiltLR, tiltFB) {
+   // USE CSS3 rotations for rotating the HTML5 logo
+   //for webkit browser
+   document.getElementById("imgLogo").style.webkitTransform = 
+                "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
+ 
+   //for HTML5 standard-compliance
+   document.getElementById("imgLogo").style.transform = 
+                "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
+}
+</script>
+ 
 </body>
 </html>
