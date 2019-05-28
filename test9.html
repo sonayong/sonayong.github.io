@@ -10,11 +10,11 @@
 
 <div id="gyroArea">
 	<div class="image">
-		<div class="ball" id="ball1" ></div>
-		<div class="ball" id="ball2" ></div>
-		<div class="ball" id="ball3" ></div>
-		<div class="ball" id="ball4" ></div>
-		<div class="ball" id="ball5" ></div>
+		<div class="book" id="book1" ></div>
+		<div class="book" id="book2" ></div>
+		<div class="book" id="book3" ></div>
+		<div class="book" id="book4" ></div>
+		<div class="book" id="book5" ></div>
 	</div>
 </div>
 	<style>
@@ -36,7 +36,7 @@
 	  width: 100%;
 	}
 
-	.ball {
+	.book {
 	  position: relative;
 	  width: 300px;
 	  height: 45px;
@@ -44,27 +44,27 @@
 	  margin-top: 5px;
 	}
 		
-	#ball1{
+	#book1{
 	margin-left: 0px;
 	width: 100px;
 	}
 		
-	#ball2{
+	#book2{
 	margin-left: 30px;
 	width: 200px;
 	}
 		
-	#ball3{
+	#book3{
 	margin-left: 10px;
 	width: 300px;
 	}
 		
-	#ball4{
+	#book4{
 	margin-left: 0px;
 	width: 400px;
 	}
 		
-	#ball5{
+	#book5{
 	margin-left: 50px;
 	width: 500px;
 	}
@@ -73,7 +73,7 @@
 		   $(function(){
 
   $gyroArea = $('#gyroArea');
-  $ball = $('.ball');
+  $ball = $('.book');
 
   // 자이로 센서를 사용할 경우에는 공을 기울기에 의해 움직일 수있게하는
   var balls = $ball,
