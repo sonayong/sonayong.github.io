@@ -141,7 +141,7 @@
         } else if (x === 0 && oldSpeed === 0 && gamma < 0) {
           // 아무것도
         } else {
-          var speed = oldSpeed + ((gamma) / 300) * rValues[index%rValues.length];
+          var speed = oldSpeed + ((gamma) / 100) * rValues[index%rValues.length];
           var x = x + speed;
           x =  max(0, min(rightLimit, x));
 
