@@ -151,16 +151,16 @@
 
           ball.speedX = speed;
           // 여기에서 반사의 구현
-          if (x == rightLimit && oldSpeed > bounceLimitSpeed) {
-            ball.speedX = -speed * bounceRaito;
-          } else if (x === rightLimit && oldSpeed <= bounceLimitSpeed) {
-            ball.speedX = 0;
-          }
-          if (x == 0 && oldSpeed < -bounceLimitSpeed) {
-            ball.speedX = -speed * bounceRaito;
-          } else if (x === 0 && oldSpeed >= -bounceLimitSpeed) {
-            ball.speedX = 0;
-          }
+//           if (x == rightLimit && oldSpeed > bounceLimitSpeed) {
+//             ball.speedX = -speed * bounceRaito;
+//           } else if (x === rightLimit && oldSpeed <= bounceLimitSpeed) {
+//             ball.speedX = 0;
+//           }
+//           if (x == 0 && oldSpeed < -bounceLimitSpeed) {
+//             ball.speedX = -speed * bounceRaito;
+//           } else if (x === 0 && oldSpeed >= -bounceLimitSpeed) {
+//             ball.speedX = 0;
+//           }
         }
 
       });
