@@ -98,33 +98,33 @@
       balls.each(function(index, ball) {
 
         // beta 값이 양수이면 아래로, 음수이면 위로 이동한다.
-        var oldSpeed = ball.speedY || 0;
-        var y = parseInt(ball.style.top || 0);
+//         var oldSpeed = ball.speedY || 0;
+//         var y = parseInt(ball.style.top || 0);
   
-        if (y === bottomLimit && oldSpeed === 0 && beta > 0) {
+//         if (y === bottomLimit && oldSpeed === 0 && beta > 0) {
           // 아무것도
-        } else if (y === 0 && oldSpeed === 0 && beta < 0) {
+//         } else if (y === 0 && oldSpeed === 0 && beta < 0) {
           // 아무것도
-        } else {
-          var speed = oldSpeed + ((beta) / 300) * rValues[index%rValues.length];
-          var y = y + speed;
-          y =  max(0, min(bottomLimit, y));
+//         } else {
+//           var speed = oldSpeed + ((beta) / 300) * rValues[index%rValues.length];
+//           var y = y + speed;
+//           y =  max(0, min(bottomLimit, y));
           
-          ball.style.top = y + 'px';
+//           ball.style.top = y + 'px';
 
-          ball.speedY = speed;
-          // 여기에서 반사의 구현
-          if (y == bottomLimit && oldSpeed > bounceLimitSpeed) {
-            ball.speedY = -speed * bounceRaito;
-          } else if (y === bottomLimit && oldSpeed <= bounceLimitSpeed) {
-            ball.speedY = 0;
-          }
-          if (y == 0 && oldSpeed < -bounceLimitSpeed) {
-            ball.speedY = -speed * bounceRaito;
-          } else if (y === 0 && oldSpeed >= -bounceLimitSpeed) {
-            ball.speedY = 0;
-          }
-        }
+//           ball.speedY = speed;
+//           // 여기에서 반사의 구현
+//           if (y == bottomLimit && oldSpeed > bounceLimitSpeed) {
+//             ball.speedY = -speed * bounceRaito;
+//           } else if (y === bottomLimit && oldSpeed <= bounceLimitSpeed) {
+//             ball.speedY = 0;
+//           }
+//           if (y == 0 && oldSpeed < -bounceLimitSpeed) {
+//             ball.speedY = -speed * bounceRaito;
+//           } else if (y === 0 && oldSpeed >= -bounceLimitSpeed) {
+//             ball.speedY = 0;
+//           }
+//         }
 
         // gamma 값이 양수이면 오른쪽으로, 음수이면 왼쪽으로 이동한다.
         var oldSpeed = ball.speedX || 0;
