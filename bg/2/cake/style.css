@@ -1,0 +1,52 @@
+body{ 
+  background: #1edbe9; 
+  color: white;
+  font: 7vw 'Roboto', sans-serif !important;
+  font-weight: 800; 
+  padding: 0;
+  margin: 0;
+}
+
+[class^=char]{
+  display: inline-block !important;
+  line-height: 1;
+  transform-origin: bottom;
+}
+
+.sky{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  background: #f6ff00;
+}
+
+.box {
+    position: absolute;
+    width: fit-content;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+.tree{
+  position: relative;
+  width: 9vw;
+  float: left;
+  padding: 0 0.3vw;
+}
+
+svg#cake {
+    z-index: 2;
+    position: absolute;
+    width: 80vw;
+    height: auto;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+svg{
+  fill: gainsboro;
+}
