@@ -1,0 +1,65 @@
+*{
+	margin: 0;
+	padding: 0;
+	word-break: keep-all;
+	-webkit-overflow-scrolling: touch; 
+	-webkit-font-smoothing: antialiased;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  /*  background-color: #fff;*/
+/*    background: linear-gradient(0deg, #ffe043, #b0d4ff);*/
+/*    animation-name: one;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+	animation-direction: alternate;*/
+}
+
+.circle{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	border-radius: 50%;
+	animation-name: two;
+	animation-duration: 12s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+/*@keyframes one{
+	0%{
+		background: linear-gradient(0deg, #ffe043, #b0d4ff);
+	}
+	30%{
+		background: linear-gradient(0deg, #ffb543, #82bbff);
+	}
+	60%{
+		background: linear-gradient(0deg, #ff8a43, #74b3ff);
+	}
+	100%{
+		background: linear-gradient(0deg, #8cafff, #4134c5);
+	}
+}*/
+
+@keyframes two{
+	0%{
+		top: 50%;
+	}
+	50%{
+		top: 120%;
+		animation-delay: 0.5s;
+	}
+	100%{
+		top: 50%;
+		animation-delay: 0.5s;
+	}
+}

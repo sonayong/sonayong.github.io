@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  -webkit-overflow-scrolling: touch; 
+  -webkit-font-smoothing: antialiased;
+}
+
+svg {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation-name: one;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes one{
+  0%{
+    background: #1600aa;
+  }
+  50%{
+    background: #03faff;
+  }
+  100%{
+    background: #1600aa;
+  }
+}
+
+
+#balloon{
+  opacity:1;
+}
+
+.a{
+  fill:none;
+  stroke:transparent;
+  stroke-miterlimit:10;
+}
+
+.svgcircle{
+  fill:#fff;
+}
