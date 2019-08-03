@@ -719,7 +719,7 @@ body{
 		}
 	}
 
-	@media all and (max-width: 800px){
+	@media all and (max-device-width: 800px){
 		.mobilefirstpage{
 			position: fixed;
 			width: 100%;
@@ -727,12 +727,12 @@ body{
 			top: 0;
 			left: 0;
 			/*background: #fff;*/
-			z-index: 999999;
+			z-index: 9999999;
 			cursor: pointer;
 		}
 
 		.firstpage{
-			display: none;
+			display: none !important;
 		}
 
 
