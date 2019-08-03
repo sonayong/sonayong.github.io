@@ -8,6 +8,21 @@
 	<link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
 </head>
 <body>
+	<div class="mobilefirstpage">
+		<div class="title">Background</div>
+		<script type="text/javascript">
+			if (window.DeviceOrientationEvent){
+			window.addEventListener('deviceorientation', update, true);
+			function update(event){
+			document.body.style.backgroundColor = "rgb( "+Math.abs(event.alpha)+", "+Math.abs(event.beta)+", "+Math.abs(event.gamma)+" )";
+			}
+			} else {
+				var warning = document.querySelector("#warning");
+				warning.innerHTML = "This demo needs a browser which implements the W3C DeviceOrientation specification (in particular, the 'deviceorientation' event). Please use a browser which does so to experience this demo properly.";
+			}
+		</script>
+
+	</div>
 	<div class="firstpage">
 		<div class="title">Background</div>
 	</div>
