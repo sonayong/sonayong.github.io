@@ -714,3 +714,9 @@ body{
 			background: rgba(100,100,100,0.9);
 		}
 	}
+
+	@media all and (max-width: 800px){
+		.firstpage{
+			display: block !important;
+		}
+	}
