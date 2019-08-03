@@ -22,7 +22,7 @@
 		</script>
 	</div>
 	<div class="mobiletitle">Background</div>
-	
+
 	<div class="firstpage">
 		<div class="title">Background</div>
 	</div>
@@ -584,6 +584,7 @@
 		// 	  .to(".object1 .next .sky", 2, {background: "linear-gradient(0deg, #ffe043, #b0d4ff)"})
 
 
+	
 				// split text
 		Splitting(); // => letters are '<div>' wrapped!
 		// vars
@@ -606,6 +607,7 @@
 		    var audioAPI = new audioContext(); // Web Audio API is available.
 		  } else { /* ERROR HANDLING */ }
 
+
 		  // main animation func
 		  function animateStuff() {
 		    requestAnimationFrame(animateStuff);
@@ -622,7 +624,9 @@
 		      // set color to:
 		      // allRepeatedEls[i].style.color = colorArr[ Math.floor( Math.random()*colorArr.length ) ] ;
 		    }
+		    
 		  }
+
 
 		  // create an audio API analyser node and connect to source
 		  function createAnalyserNode(audioSource) {
@@ -647,7 +651,6 @@
 		    .getUserMedia({ audio: true, video: false })
 		    .then(gotStream);
 		});
-
 </script>
 
 
