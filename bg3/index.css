@@ -1,0 +1,716 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	overflow: hidden;
+}
+
+.firstpage{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #fff;
+	z-index: 999999;
+	cursor: pointer;
+}
+
+.secondpage{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #fff;
+	z-index: 999998;
+	cursor: pointer;
+}
+
+
+.title{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top: 50%;
+	text-align: center;
+	transform: translateY(-50%);
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: yellow;
+    transform-origin: 50% 0%;
+    transition: all 1s;
+    z-index: 1;
+}
+
+.sky {
+    position: absolute;
+    width: 300%;
+    height: 50%;
+    left: -150%;
+}
+
+.ground {
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    top: 50%;
+    left: -150%;
+}
+
+.previous .sky{
+	position: absolute;
+    width: 200%;
+    height: 200%;
+    left: -100%;
+}
+
+.previous .ground{
+	position: absolute;
+    width: 200%;
+    height: 200%;
+    left: -100%;
+}
+
+.next .sky{
+	position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0%;
+}
+
+.next .ground{
+	position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0%;
+}
+
+.popupcaption{
+	position: absolute;
+	width: 100%;
+	bottom: 1.4vw;
+	font-size: 4vw;
+	text-align: center;
+	z-index: 9;
+}
+
+.fontw{
+	color: #fff;
+}
+
+.fontb{
+	color: #000;
+}
+
+.previous {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    cursor: w-resize;
+}
+
+.next {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    cursor: e-resize;
+}
+
+/*.sky-flip {
+    position: absolute;
+    width: 300%;
+    height: 50%;
+    top: -50%;
+    left: -150%;
+    background: repeating-linear-gradient(180deg, #fffa99 0%, #ffe315 3.6%);
+}
+
+.ground-flip {
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    top: -150%;
+    left: -150%;
+    background: repeating-linear-gradient(90deg, #ffffff 1.6%, #55abff 2%);
+}*/
+
+/* object 1 */
+
+.object1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+	.sun{
+		position: absolute;
+		width: 16vw;
+		height: 16vw;
+		top: 5vw;
+		right: 9vw;
+		border-radius: 50%;
+		background: yellow;
+		cursor: pointer;
+	}
+
+/* object 2 */
+.object2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.tree {
+    position: absolute;
+    width: 200%;
+    top: 50%;
+    left: -24%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.treetree {
+    width: 8vw;
+    float: left;
+}
+
+
+.bird {
+    position: absolute;
+    width: 25vw;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.previous .bird{
+	top: 5vw;
+}
+
+.next .bird{
+	bottom: 5vw;
+}
+
+.object2 .previous{
+	overflow: hidden;
+	width: 60%;
+	left: -10%;
+}
+
+/* object 3 */ 
+.object3 {
+	display: none;
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+
+
+.previous .tree{
+	left: -13.3%;
+}
+
+	.car {
+		position: absolute;
+	    width: 45vw;
+	    height: auto;
+	    top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+	}
+
+/* object 4 */
+.object4 {
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+/* object 5 */ 
+.object5 {
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+       overflow: hidden;
+}
+
+.bighouse{
+	position: absolute;
+    width: 63.3vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bighouse .w{
+	fill: yellow;
+}
+
+.house {
+    position: absolute;
+    width: 80vh;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+	.cup {
+		position: absolute;
+	    width: 40vw;
+	    height: auto;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    cursor: pointer;
+		}
+
+/* object 6 */
+.object6 {
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    transform: rotate(180deg);
+ 
+}
+
+.pan {
+    position: absolute;
+    width: 46vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* object 7 */
+.object7 {
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+/* object 8 */
+.object8 {
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    transform: rotate(180deg);
+}
+.can {
+	position: absolute;
+    width: 13vw;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* object 9 */
+.object9 {
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.balloon {
+	position: absolute;
+    width: 15vw;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/******************** color ********************/
+
+.w{
+	fill: #fff;
+}
+
+/******************** turn ********************/
+.once{transform: rotate(180deg);}
+.twice{transform: rotate(360deg);}
+.third{transform: rotate(540deg);}
+.fourth{transform: rotate(720deg);}
+.fifth{transform: rotate(900deg);}
+.sixth{transform: rotate(1080deg);}
+.seventh{transform: rotate(1260deg);}
+.eighth{transform: rotate(1440deg);}
+/******************** background color ********************/
+.object1 .previous .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #00d3ff, #006eff);}
+.object1 .previous .ground{background: transparent;}
+.object1 .next .sky{background: linear-gradient(0deg, #d3d0ff, #d3d0ff, #867eff, #0069ff, #000833);}
+.object1 .next .ground{background: transparent;}
+
+/*.object2 .previous .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #00d3ff, #006eff);}
+.object2 .previous .ground{background: #3cd824;}
+.object2 .next .sky{background: #3cd824;}
+.object2 .next .ground{background: linear-gradient(0deg, #006eff, #00d3ff);}
+*/
+.object2 .sky{background: #006eff;}
+.object2 .ground{background: #2dc700;}
+.object2 .previous .sky{background: #006eff;}
+.object2 .previous .ground{background: #2dc700;}
+.object2 .next .sky{background: linear-gradient(0deg, #ffffff, #b1b1b1, #2f2f2f);}
+.object2 .next .ground{background: #1c7b00;}
+
+.object3 .previous .sky{background: linear-gradient(0deg, yellow, yellow, yellow, yellow, yellow, yellow, #ffacbb, #ff9500);}
+.object3 .previous .ground{background: #006cff;}
+.object3 .next .sky{background: linear-gradient(0deg, #ffffff, #b1b1b1, #2f2f2f);}
+.object3 .next .ground{background: #404040;}
+
+.object4 .previous .sky{background: linear-gradient(0deg, #ffffff, #f3ff00, #ffcc00);}
+.object4 .previous .ground{background: #24ff39;}
+.object4 .next .sky{background: linear-gradient(0deg, #ffffff, #b1b1b1, #2f2f2f);}
+.object4 .next .ground{background: #404040;}
+
+.object5 .previous .sky{background: #e9e9e9;}
+.object5 .previous .ground{background: #90714e;}
+.object5 .next .sky{background: #e9e9e9;}
+.object5 .next .ground{background: #a9a9a9;}
+
+.object6 .previous .sky{background: #eee;}
+.object6 .previous .ground{background: #ccc;}
+.object6 .next .sky{background: #e9e9e9;}
+.object6 .next .ground{background: #ccc;}
+
+.object7 .previous .sky{background: linear-gradient(90deg, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ffffff, #ff0000);}
+.object7 .previous .ground{background: transparent;}
+.object7 .next .sky{background: linear-gradient(0deg, #ff0000, #ff0000, #ff0000, #ff0000, #ffffff, #004bff, #004bff);}
+.object7 .next .ground{background: transparent;}
+
+.object8 .previous .sky{background: gray;}
+.object8 .previous .ground{background: transparent;}
+.object8 .next .sky{background: gray;}
+.object8 .next .ground{background: transparent;}
+
+/********** POPUP **********/
+
+.popup{
+	display: none;
+    position: absolute;
+    box-shadow: 0px 3px 30px 0px rgba(0,0,0,0.2);
+    border: 1px rgba(0,0,0,0.7);
+    z-index: 9;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.sun-container {
+		    position: relative;
+		    width: 100%;
+		    height: 100%;
+		    top: 0;
+		    left: 0;
+		}
+		.sun-circle{
+			position: relative;
+			width: 15vw;
+			height: 15vw;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: #fff;
+			border-radius: 50%;
+			/*animation-name: sunani;
+			animation-duration: 12s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;*/
+		}
+
+		/*@keyframes sunani{
+			0%{
+				top: 50%;
+			}
+			50%{
+				top: 120%;
+				animation-delay: 0.5s;
+			}
+			100%{
+				top: 50%;
+				animation-delay: 0.5s;
+			}
+		}*/
+
+.moon-container {
+		    position: relative;
+		    width: 100%;
+		    height: 100%;
+		    top: 0;
+		    left: 0;
+		}
+		.moon-circle{
+			position: relative;
+			width: 15vw;
+			height: 15vw;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: #fff;
+			border-radius: 50%;
+			/*animation-name: moonani;
+			animation-duration: 12s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;*/
+		}
+
+		/*@keyframes moonani{
+			0%{
+				top: 50%;
+			}
+			50%{
+				top: 120%;
+				animation-delay: 0.5s;
+			}
+			100%{
+				top: 50%;
+				animation-delay: 0.5s;
+			}
+		}
+*/
+
+
+
+
+.treepopup1{
+	width: 35vw;
+	height: 35vw;
+	top: 12vw;
+	left: calc(50% - 38vw);
+}
+
+.treepopup2{
+	width: 35vw;
+	height: 35vw;
+	top: 12vw;
+	left: calc(50% + 3vw);
+}
+	.tree-container{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: linear-gradient(0deg, #43ff66, #b0ffbb); 
+		}
+		[class^=char]{
+		  display: inline-block !important;
+		  line-height: 1;
+		  transform-origin: bottom;
+		}
+		.tree-sky{
+		  position: absolute;
+		  width: 100%;
+		  height: 50%;
+		  z-index: 1;
+		  background: linear-gradient(0deg, #ff8ecc, #ffc9e6);
+		}
+		.tree-box {
+		    position: absolute;
+		    width: fit-content;
+		    top: 17%;
+		    left: 50%;
+		    transform: translateX(-50%);
+		    z-index: 9;
+	        overflow: visible;
+		}
+		.tree-tree{
+		  position: relative;
+		  width: 7vw;
+		  float: left;
+		  padding: 0 0.3vw;
+		}
+
+.cuppopup1{
+	position: absolute;
+	width: 35vw;
+    height: 35vw;
+    top: 10vw;
+    left: 5vw;
+}
+	.hot-container {
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+	    top: 0;
+	    left: 0;
+	    background: #ddd;
+	}
+
+	.hot-cup{
+		position: absolute;
+	    width: 40vw;
+	    height: auto;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    cursor: pointer;
+		filter: blur(0px);
+		/*transform: translate(-50%, -50%);*/ 
+		animation-name: steam;
+		animation-delay: 3s;
+		animation-duration: 6s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+	}
+
+	.hot-hot{
+		position: absolute;
+		width: 200%;
+		height: 200%;
+		top: 0;
+		left: -100%;
+		background: rgba(255,255,255,0);
+		z-index: 4;
+		animation-name: hot;
+		animation-delay: 3s;
+		animation-duration: 3s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+	}
+
+	@keyframes hot{
+		0%{
+			background: rgba(255,255,255,0);
+		}
+		100%{
+			background: rgba(255,255,255,0.6);
+		}
+	}
+
+	@keyframes steam{
+		0%{
+			filter: blur(0px);
+		}
+		100%{
+			filter: blur(8px);
+		}
+	}
+
+.cuppopup2{
+	position: absolute;
+	width: 35vw;
+    height: 35vw;
+    top: 10vw;
+    right: 5vw;
+}
+	.ice-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #ddd;
+	}
+
+	.ice-cup{
+		position: relative;
+		width: 30vw;
+		height: auto;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+	}
+
+.pan-fan{
+		position: absolute;
+		width: 200%;
+		height: 200%;
+		top: 0;
+		left: -100%;
+		background: rgba(100,100,100,0.9);
+		z-index: 4;
+		animation-name: panfan;
+		animation-duration: 6s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+	}
+
+		@keyframes panfan{
+		0%{
+			background: rgba(100,100,100,0.9);
+		}
+
+		25%{
+			background: rgba(100,100,100,0.5)
+		}
+
+		100%{
+			background: rgba(100,100,100,0);
+		}
+	}
+
+.pan-hot{
+		position: absolute;
+		width: 200%;
+		height: 200%;
+		top: 0;
+		left: 0%;
+		background: rgba(255,255,255,0);
+		z-index: 4;
+		animation-name: panhot;
+		animation-duration: 6s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+	}
+
+		@keyframes panhot{
+		0%{
+			background: rgba(0,0,0,0);
+		}
+
+		25%{
+			background: rgba(100,100,100,0.5)
+		}
+
+		100%{
+			background: rgba(100,100,100,0.9);
+		}
+	}
