@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BG</title>
+	<link rel="stylesheet" type="text/css" href="./index.css">
+	<link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+</head>
+<body>
+	<div class="firstpage">
+		<div class="title">Background</div>
+	</div>
+	<div class="secondpage">
+		<div class="title">Background</div>
+	</div>
+	<div class="page">
+		<!-- object -->
+			<!-- object 1 SUN MOON -->
+			<div class="object1">
+				<!-- object1 Sun -->
+				<div class="previous" id="sunplay">
+					<div class="sky"></div>
+					<div class="ground"></div>
+
+					<div class="sun-container">
+						<div class="sun-circle"></div>
+					</div>
+
+					<!-- object1 Sun Sound -->
+					<audio id="sunsound" preload="auto">
+				      <source src="./sound/sun.wav" type="audio/wav">
+				    </audio>
+				    <!-- object1 Sun Sound fin -->
+				</div>
+				<!-- object1 Sun fin -->
+				<!-- object1 Moon -->
+				<div class="next" id="moonplay">
+					<!-- object1 Sun -->
+					<div class="sky"></div>
+
+					<div class="moon-container">
+						<div class="moon-circle"></div>
+					</div>
+
+					<!-- object1 Moon Sound -->
+					<audio id="moonsound" preload="auto">
+				      <source src="./sound/night.wav" type="audio/wav">
+				    </audio>
+				    <!-- object1 Sun Sound fin -->
+				</div>
+				<!-- object1 Moon fin -->
+
+			</div>
+			<!-- object 2 BIRD WIND -->
+			<!-- <div class="object2">
+				<div class="previous">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="bird">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 417.77 239.68"><path class="w" d="M803.58,274.56l20.52,1.12a7,7,0,0,0,5.06-12.2L808.9,245.33a45.89,45.89,0,0,0-91.27,6.84S716.12,284.7,659,295.06h0L558,300.44h0c-59.79,3.1-164.41,12.33-140.81,38.45,10.56,11.7,34.5,23.26,62,33.54,5,36.45,73.75,73.53,153.31,73.53,33.23,0,63.93-5,88.79-13.56a117.11,117.11,0,0,0,28.48-12.75,90.7,90.7,0,0,0,19.54-14.87c21.24-20.24,35-62,21.4-115.65A46,46,0,0,0,803.58,274.56Z" transform="translate(-413.74 -206.28)"/></svg>
+					</div>
+				</div>
+				<div class="next">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="bird">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 417.77 239.68"><path class="w" d="M803.58,274.56l20.52,1.12a7,7,0,0,0,5.06-12.2L808.9,245.33a45.89,45.89,0,0,0-91.27,6.84S716.12,284.7,659,295.06h0L558,300.44h0c-59.79,3.1-164.41,12.33-140.81,38.45,10.56,11.7,34.5,23.26,62,33.54,5,36.45,73.75,73.53,153.31,73.53,33.23,0,63.93-5,88.79-13.56a117.11,117.11,0,0,0,28.48-12.75,90.7,90.7,0,0,0,19.54-14.87c21.24-20.24,35-62,21.4-115.65A46,46,0,0,0,803.58,274.56Z" transform="translate(-413.74 -206.28)"/></svg>
+					</div>
+				</div>
+			</div> -->
+
+			<!-- object 2 TREE WIND -->
+			<div class="object2">
+				<div class="sky"></div>
+				<div class="ground"></div>
+				<div class="next" id="typhoonplay">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="tree">
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					</div>
+					<!-- object1 Moon Sound -->
+					<audio id="typhoonsound" preload="auto">
+				      <source src="./sound/typhoon.mp3" type="audio/mp3">
+				    </audio>
+				    <!-- object1 Sun Sound fin -->
+				</div>
+				<div class="previous" id="breezeplay">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="tree">
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					<div class="treetree">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="w" x="111.53" y="464" width="57.53" height="389"/><ellipse class="w" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+					</div>
+					</div>
+					<!-- object1 Moon Sound -->
+					<audio id="breezesound" preload="auto">
+				      <source src="./sound/breeze.mp3" type="audio/mp3">
+				    </audio>
+				    <!-- object1 Sun Sound fin -->
+				</div>
+				
+				
+
+				<!-------------------- TREE POPUP 1 -------------------->
+				<!-- <div class="popup treepopup1" id="breezeplay">
+					<div class="tree-container mike">
+						<div class="tree-sky"></div>
+						<div>
+							<div class="tree-box">
+									<span class="tree-tree">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="ww" x="111.53" y="464" width="57.53" height="389"/><ellipse class="ww" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+									</span>
+									<span class="tree-tree">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="ww" x="111.53" y="464" width="57.53" height="389"/><ellipse class="ww" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+									</span>
+									<span class="tree-tree">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="ww" x="111.53" y="464" width="57.53" height="389"/><ellipse class="ww" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+									</span>
+							</div>
+						</div>
+					</div> -->
+					<!-- object1 breeze Sound -->
+					<!-- <audio id="breezesound" preload="auto">
+				      <source src="./sound/sun.wav" type="audio/wav">
+				    </audio> -->
+					 <!-- object2 caption -->
+					<!-- <div class="popupcaption fontb">BREEZE</div>
+				</div> -->
+				<!-------------------- TREE POPUP 2 -------------------->
+				<!-- <div class="popup treepopup2" id="typhoonplay">
+					<div class="tree-container mike">
+						<div class="tree-sky"></div>
+						<div>
+							<div class="tree-box">
+									<span class="tree-tree">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="ww" x="111.53" y="464" width="57.53" height="389"/><ellipse class="ww" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+									</span>
+									<span class="tree-tree">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="ww" x="111.53" y="464" width="57.53" height="389"/><ellipse class="ww" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+									</span>
+									<span class="tree-tree">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 853"><rect class="ww" x="111.53" y="464" width="57.53" height="389"/><ellipse class="ww" cx="136.06" cy="279.5" rx="136.06" ry="279.5"/></svg>
+									</span>
+							</div>
+						</div>
+					</div> -->
+					<!-- object1 typhoon Sound -->
+					<!-- <audio id="typhoonsound" preload="auto">
+				      <source src="./sound/moon.wav" type="audio/wav">
+				    </audio> -->
+					<!-- object2 caption -->
+					<!-- <div class="popupcaption fontb">TYPHOON</div>
+				</div> -->
+				<!-------------------- TREE POPUP 2 fin -------------------->
+			</div>
+			<!-- object 3 CAR -->
+			<div class="object3">
+				<div class="previous">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="car">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1205.14 611.2"><circle class="c1" cx="336.97" cy="540.18" r="71.02"/><circle class="c1" cx="864.65" cy="540.18" r="71.02"/><ellipse class="c1" cx="602.57" cy="399.13" rx="602.57" ry="119.91"/><ellipse class="c1" cx="607.07" cy="210.06" rx="349.25" ry="210.06"/></svg>
+				</div>
+				</div>
+				<div class="next">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="car">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1205.14 611.2"><circle class="c1" cx="336.97" cy="540.18" r="71.02"/><circle class="c1" cx="864.65" cy="540.18" r="71.02"/><ellipse class="c1" cx="602.57" cy="399.13" rx="602.57" ry="119.91"/><ellipse class="c1" cx="607.07" cy="210.06" rx="349.25" ry="210.06"/></svg>
+				</div>
+				</div>
+				
+			</div>
+			<!-- object 4 HOUSE -->
+			<div class="object4">
+				<div class="next">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<!-- <div class="bighouse">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.77 323.23"><polygon class="w" points="516.77 129.69 439.13 0 83.61 0 0 129.69 52.6 129.69 52.6 323.23 464.17 323.23 464.17 129.69 516.77 129.69"/></svg>
+					</div> -->
+					<div class="house">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.77 323.23"><polygon class="w" points="516.77 129.69 439.13 0 83.61 0 0 129.69 52.6 129.69 52.6 323.23 464.17 323.23 464.17 129.69 516.77 129.69"/></svg>
+					</div>
+				</div>
+				<div class="previous">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="house">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.77 323.23"><polygon class="w" points="516.77 129.69 439.13 0 83.61 0 0 129.69 52.6 129.69 52.6 323.23 464.17 323.23 464.17 129.69 516.77 129.69"/></svg>
+					</div>
+				</div>
+			</div>
+			<!-- object 6 CUP -->
+			<div class="object5">
+				<div class="next" id="iceplay">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="cup">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452.44 321"><ellipse class="w" cx="176.07" cy="41.89" rx="174.71" ry="41.89"/><path class="w" d="M294.63,345.91S266.24,625,469.34,625,644.06,345.91,644.06,345.91" transform="translate(-293.28 -304.03)"/><path class="w" d="M644.06,359.76A101.66,101.66,0,1,0,745.72,461.42,101.66,101.66,0,0,0,644.06,359.76Zm0,156a54.32,54.32,0,1,1,54.32-54.32A54.32,54.32,0,0,1,644.06,515.74Z" transform="translate(-293.28 -304.03)"/></svg>
+					</div>
+					<!-- object6 Ice Sound -->
+					<audio id="icesound" preload="auto">
+				      <source src="./sound/ice.mp3" type="audio/mp3">
+				    </audio>
+				</div>
+				<div class="previous" id="hotplay">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="hot-cup">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452.44 321"><ellipse class="w" cx="176.07" cy="41.89" rx="174.71" ry="41.89"/><path class="w" d="M294.63,345.91S266.24,625,469.34,625,644.06,345.91,644.06,345.91" transform="translate(-293.28 -304.03)"/><path class="w" d="M644.06,359.76A101.66,101.66,0,1,0,745.72,461.42,101.66,101.66,0,0,0,644.06,359.76Zm0,156a54.32,54.32,0,1,1,54.32-54.32A54.32,54.32,0,0,1,644.06,515.74Z" transform="translate(-293.28 -304.03)"/></svg>
+					</div>
+					<div class="hot-hot"></div>
+					<!-- object6 Hot Sound -->
+					<audio id="hotsound" preload="auto">
+				      <source src="./sound/hot.mp3" type="audio/mp3">
+				    </audio>
+				</div>
+			</div>
+				<!-- object 7 CUP -->
+			<div class="object6">
+				<div class="previous">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="pan">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 586.5 132.19"><path d="M891.91,373.55H770.17c0-25.07-99.82-45.4-223-45.4s-223,20.33-223,45.4a10.07,10.07,0,0,0,.68,3.55c4.13,16.32,32.64,83.24,222.29,83.24,128.95,0,183.4-30.94,206.34-55.87H891.91c10.4,0,18.83-6.92,18.83-15.46S902.31,373.55,891.91,373.55Z" transform="translate(-324.23 -328.15)"/></svg>
+					</div>
+					<div class="pan-fan"></div>
+				</div>
+				<div class="next" id="panplay">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="pan">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 586.5 132.19"><path d="M891.91,373.55H770.17c0-25.07-99.82-45.4-223-45.4s-223,20.33-223,45.4a10.07,10.07,0,0,0,.68,3.55c4.13,16.32,32.64,83.24,222.29,83.24,128.95,0,183.4-30.94,206.34-55.87H891.91c10.4,0,18.83-6.92,18.83-15.46S902.31,373.55,891.91,373.55Z" transform="translate(-324.23 -328.15)"/></svg>
+					</div>
+					<div class="pan-hot"></div>
+					<!-- object6 Ice Sound -->
+					<audio id="pansound" preload="auto">
+				      <source src="./sound/pan.wav" type="audio/wav">
+				    </audio>
+				</div>
+			</div>
+				<!-- object 8 CUP -->
+			<div class="object7">
+				<div class="previous">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="can">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.64 311.23"><path class="w" d="M478.55,87.82c-41.32,0-74.82,17.87-74.82,39.91V359.14c0,22,33.5,39.91,74.82,39.91s74.82-17.87,74.82-39.91V127.73C553.37,105.69,519.87,87.82,478.55,87.82Z" transform="translate(-403.73 -87.82)"/></svg>
+					</div>
+				</div>
+				<div class="next">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="can">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.64 311.23"><path class="w" d="M478.55,87.82c-41.32,0-74.82,17.87-74.82,39.91V359.14c0,22,33.5,39.91,74.82,39.91s74.82-17.87,74.82-39.91V127.73C553.37,105.69,519.87,87.82,478.55,87.82Z" transform="translate(-403.73 -87.82)"/></svg>
+					</div>
+				</div>
+			</div>
+				<!-- object 9 CUP -->
+			<div class="object8">
+				<div class="previous">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="balloon">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 474.72 687.75"><ellipse class="c3" cx="237.36" cy="325.13" rx="237.36" ry="325.13"/><polygon class="c3" points="237.36 612.75 194.06 687.75 280.66 687.75 237.36 612.75"/></svg>
+					</div>
+				</div>
+				<div class="next">
+					<div class="sky"></div>
+					<div class="ground"></div>
+					<div class="balloon">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 474.72 687.75"><ellipse class="c3" cx="237.36" cy="325.13" rx="237.36" ry="325.13"/><polygon class="c3" points="237.36 612.75 194.06 687.75 280.66 687.75 237.36 612.75"/></svg>
+					</div>
+				</div>
+			</div>
+				<!-------------------- CUP POPUP 1 -------------------->
+					<!-- <div class="popup cuppopup1">
+						<div class="hot-container">
+							<div class="hot-cup">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452.44 321"><ellipse class="w" cx="176.07" cy="41.89" rx="174.71" ry="41.89"/><path class="w" d="M294.63,345.91S266.24,625,469.34,625,644.06,345.91,644.06,345.91" transform="translate(-293.28 -304.03)"/><path class="w" d="M644.06,359.76A101.66,101.66,0,1,0,745.72,461.42,101.66,101.66,0,0,0,644.06,359.76Zm0,156a54.32,54.32,0,1,1,54.32-54.32A54.32,54.32,0,0,1,644.06,515.74Z" transform="translate(-293.28 -304.03)"/></svg>
+							</div>
+							<div class="hot-hot"></div>
+						</div>
+						<div class="popupcaption fontb">HOT</div>
+					</div> -->
+					<!-------------------- CUP POPUP 2 -------------------->
+					<!-- <div class="popup cuppopup2">
+						<div class="ice-container">
+							<div class="ice-cup">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452.44 321"><ellipse class="w" cx="176.07" cy="41.89" rx="174.71" ry="41.89"/><path class="w" d="M294.63,345.91S266.24,625,469.34,625,644.06,345.91,644.06,345.91" transform="translate(-293.28 -304.03)"/><path class="w" d="M644.06,359.76A101.66,101.66,0,1,0,745.72,461.42,101.66,101.66,0,0,0,644.06,359.76Zm0,156a54.32,54.32,0,1,1,54.32-54.32A54.32,54.32,0,0,1,644.06,515.74Z" transform="translate(-293.28 -304.03)"/></svg>
+							</div>
+						</div>
+						<div class="popupcaption fontb">ICE</div>
+					</div> -->
+					<!-------------------- CUP POPUP 2 fin -------------------->
+			</div>
+			<!-- object COLA -->
+		<!-- 	<div class="object7">
+				<div class="sky"></div>
+				<div class="ground"></div>
+				<div class="previous"></div>
+				<div class="next"></div>
+				<div class="can">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.64 311.23"><path class="c1" d="M478.55,87.82c-41.32,0-74.82,17.87-74.82,39.91V359.14c0,22,33.5,39.91,74.82,39.91s74.82-17.87,74.82-39.91V127.73C553.37,105.69,519.87,87.82,478.55,87.82Z" transform="translate(-403.73 -87.82)"/></svg>
+				</div>
+			</div> -->
+	</div>
+	
+<!-------------------- JS -------------------->
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="./index.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/TweenMax-latest-beta.js?v=333"></script>
+	<script src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js?r=1899"></script>
+	<script src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/findShapeIndex.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/Draggable-latest-alpha.js"></script>
+	<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<script>
+
+	$(".next, .previous").click(function(){
+		if($(".page").hasClass("once")==true){
+			$(".page").addClass("twice").removeClass("once");
+			$(".object1").hide()
+			$(".object3").show()
+		}else if($(".page").hasClass("twice")==true){
+			$(".page").addClass("third").removeClass("twice");
+			$(".object2").hide()
+			$(".object4").show()
+		}else if($(".page").hasClass("third")==true){
+			$(".page").addClass("fourth").removeClass("third");
+			$(".object3").hide()
+			$(".object5").show()
+		}else if($(".page").hasClass("fourth")==true){
+			$(".page").addClass("fifth").removeClass("fourth");
+			$(".object4").hide()
+			$(".object6").show()
+		}else if($(".page").hasClass("fifth")==true){
+			$(".page").addClass("sixth").removeClass("fifth");
+			$(".object5").hide()
+			$(".object7").show()
+		}else if($(".page").hasClass("sixth")==true){
+			$(".page").addClass("seventh").removeClass("sixth");
+			$(".object6").hide()
+			$(".object8").show()
+		}else if($(".page").hasClass("seventh")==true){
+			$(".page").addClass("eighth").removeClass("seventh");
+			$(".object7").hide()
+			$(".object9").show()
+		}else{
+			$(".page").addClass("once");
+		}
+	});
+
+	$(".firstpage").click(function(){
+		$(".firstpage").hide();
+	});
+
+	$(".secondpage").click(function(){
+		$(".secondpage").hide();
+	});
+
+	$(".sun").click(function(){
+		$(".sunpopup").show();
+		$(".moonpopup").show();
+	});
+	$(".sunpopup").click(function(){
+		$(".sunpopup").hide();
+	});
+	$(".moonpopup").click(function(){
+		$(".moonpopup").hide();
+	});
+
+	$(".tree").click(function(){
+		$(".treepopup1").show();
+		$(".treepopup2").show();
+	});
+	$(".treepopup1").click(function(){
+		$(".treepopup1").hide();
+	});
+	$(".treepopup2").click(function(){
+		$(".treepopup2").hide();
+	});
+
+	$(".cup").click(function(){
+		$(".cuppopup1").show();
+		$(".cuppopup2").show();
+	});
+	$(".cuppopup1").click(function(){
+		$(".cuppopup1").hide();
+	});
+	$(".cuppopup2").click(function(){
+		$(".cuppopup2").hide();
+	});
+
+	$(".pan-fan").mouseover(function(){
+		$(".pan-fan").css("animation-play-state", "running");
+	});
+	$(".pan-fan").mouseout(function(){
+		$(".pan-fan").css("animation-play-state", "pause");
+	});
+
+	$(".pan-hot").mouseover(function(){
+		$(".pan-hot").css("animation-play-state", "running");
+	});
+	$(".pan-hot").mouseout(function(){
+		$(".pan-hot").css("animation-play-state", "pause");
+	});
+
+	$(".object5 .previous").mouseover(function(){
+		$(".hot-cup").css("animation-play-state", "running");
+		$(".hot-hot").css("animation-play-state", "running");
+	});
+	$(".object5 .previous").mouseout(function(){
+		$(".hot-cup").css("animation-play-state", "pause");
+		$(".hot-hot").css("animation-play-state", "pause");
+	});
+
+	$(".object5 .next").mouseover(function(){
+		$(".hot-cup").css("animation-play-state", "pause");
+		$(".hot-hot").css("animation-play-state", "pause");
+	});
+
+	// Sounds
+
+		//sun sound
+	var sunsound = $("#sunsound")[0];
+        $("#sunplay").mouseover(function() {
+       		sunsound.loop = true;
+        	sunsound.play();
+        });
+        $("#sunplay").mouseout(function() {
+        	sunsound.pause();
+        });
+
+        //moon sound
+    var moonsound = $("#moonsound")[0];
+        $("#moonplay").mouseover(function() {
+       		moonsound.loop = true;
+        	moonsound.play();
+        });
+        $("#moonplay").mouseout(function() {
+        	moonsound.pause();
+        });
+
+        //breeze sound
+    var breezesound = $("#breezesound")[0];
+        $("#breezeplay").mouseover(function() {
+       		breezesound.loop = true;
+        	breezesound.play();
+        });
+        $("#breezeplay").mouseout(function() {
+        	breezesound.pause();
+        });
+
+        // typhoon sound
+    var typhoonsound = $("#typhoonsound")[0];
+        $("#typhoonplay").mouseover(function() {
+       		typhoonsound.loop = true;
+        	typhoonsound.play();
+        });
+        $("#typhoonplay").mouseout(function() {
+        	typhoonsound.pause();
+        });
+
+        // hot sound
+    var hotsound = $("#hotsound")[0];
+        $("#hotplay").mouseover(function() {
+       		hotsound.loop = true;
+        	hotsound.play();
+        });
+        $("#hotplay").mouseout(function() {
+        	hotsound.pause();
+        });
+
+        // ice sound
+    var icesound = $("#icesound")[0];
+        $("#iceplay").mouseover(function() {
+       		icesound.loop = true;
+        	icesound.play();
+        });
+        $("#iceplay").mouseout(function() {
+        	icesound.pause();
+        });
+
+        // pan sound
+    var pansound = $("#pansound")[0];
+        $("#panplay").mouseover(function() {
+       		pansound.loop = true;
+        	pansound.play();
+        });
+        $("#panplay").mouseout(function() {
+        	pansound.pause();
+        });
+
+
+	// SUN POPUP
+		// var tl = new TimelineMax({repeat:-1, yoyo:true});
+		// 	tl.to(".object1 .previous .sky", 1, {background: "linear-gradient(0deg, #ffe043, #b0d4ff)"})
+		// 	  .to(".object1 .previous .sky", 1, {background: "linear-gradient(0deg, #ffb543, #82bbff)"})
+		// 	  .to(".object1 .previous .sky", 2, {background: "linear-gradient(0deg, #ff8a43, #74b3ff)"})
+		// 	  .to(".object1 .previous .sky", 2, {background: "linear-gradient(0deg, #8cafff, #4134c5)"})
+
+		// var ta = new TimelineMax({repeat:-1, yoyo:true});
+		// 	ta.to(".object1 .next .sky", 1, {background: "linear-gradient(0deg, #8cafff, #4134c5)"})
+		// 	  .to(".object1 .next .sky", 1, {background: "linear-gradient(0deg, #ff8a43, #74b3ff)"})
+		// 	  .to(".object1 .next .sky", 2, {background: "linear-gradient(0deg, #ffb543, #82bbff)"})
+		// 	  .to(".object1 .next .sky", 2, {background: "linear-gradient(0deg, #ffe043, #b0d4ff)"})
+
+
+				// split text
+		Splitting(); // => letters are '<div>' wrapped!
+		// vars
+		var OBJ = '.next .treetree',
+		flag = 1; // flag to not multiply events
+
+		// set up audio context on BODY CLICK!
+		window.addEventListener('click', function() {
+		  if( !flag ) return; // if event is on, exit
+		  flag = !flag;
+		  var audioContext = window.AudioContext || window.webkitAudioContext;
+		  // variables
+		  var analyserNode,
+		    frequencyData = new Uint8Array(128);
+		    const allRepeatedEls = document.querySelectorAll( OBJ ),
+		    totalEls = allRepeatedEls.length;
+
+		  // create audio class
+		  if (audioContext) {
+		    var audioAPI = new audioContext(); // Web Audio API is available.
+		  } else { /* ERROR HANDLING */ }
+
+		  // main animation func
+		  function animateStuff() {
+		    requestAnimationFrame(animateStuff);
+		    analyserNode.getByteFrequencyData(frequencyData);
+		    // loop and refreq all with nice matrix style 
+		    for (let i = 0; i < totalEls; i++) {
+		      // range is 0 - 255 * 1.2 / 100 =~ 0-3
+		      var rang = Math.floor( i / totalEls * frequencyData.length ) ; // find equal distance in haystack
+		      var FREQ = frequencyData[ rang ] / 255; 
+		      // set minimal opacity to 20%
+		      allRepeatedEls[i].style.opacity = FREQ +1; 
+		      // matrix set Y only [ matrix(X, 0, 0, Y, 0, 0) ]
+		      allRepeatedEls[i].style.transform = "matrix(1, 0, "+ (FREQ * 2 + 0) +", 1, 0, 0)";
+		      // set color to:
+		      // allRepeatedEls[i].style.color = colorArr[ Math.floor( Math.random()*colorArr.length ) ] ;
+		    }
+		  }
+
+		  // create an audio API analyser node and connect to source
+		  function createAnalyserNode(audioSource) {
+		    analyserNode = audioAPI.createAnalyser();
+		    analyserNode.fftSize = 2048;
+		    audioSource.connect(analyserNode);
+		  }
+
+		  
+		  // getUserMedia success callback -> pipe audio stream into audio API
+		  var gotStream = function(stream) {
+		    // Create an audio input from the stream.
+		    var audioSource = audioAPI.createMediaStreamSource(stream);
+		    createAnalyserNode(audioSource);
+		    animateStuff();
+		  };
+
+		  setTimeout(function(){ console.log( frequencyData )}, 5000 );
+
+		  // pipe in analysing to getUserMedia
+		  navigator.mediaDevices
+		    .getUserMedia({ audio: true, video: false })
+		    .then(gotStream);
+		});
+
+</script>
+
+
+
+</body>
+</html>
