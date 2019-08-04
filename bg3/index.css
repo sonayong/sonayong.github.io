@@ -365,7 +365,7 @@ body{
     background: transparent;
 }
 
-.balloon {
+/*.balloon {
 	position: absolute;
     width: 15vw;
     height: auto;
@@ -373,7 +373,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+*/
 
 
 /******************** color ********************/
@@ -409,9 +409,9 @@ body{
 .object2 .next .sky{background: #006eff;}
 .object2 .next .ground{background: #2dc700;}
 
-.object3 .previous .sky{background: linear-gradient(0deg, yellow, yellow, yellow, #d1f0ff, #88e6ff, #77cbff, #00b8ff);}
+.object3 .previous .sky{background: linear-gradient(0deg, yellow, yellow, yellow, #d1f0ff, #88e6ff, #2eafff, #0095ff);}
 .object3 .previous .ground{background: #4e4e4e;}
-.object3 .next .sky{background: linear-gradient(0deg, yellow, yellow, yellow, #d1f0ff, #88e6ff, #77cbff, #00b8ff);}
+.object3 .next .sky{background: linear-gradient(0deg, yellow, yellow, yellow, #d1f0ff, #88e6ff, #2eafff, #0095ff);}
 .object3 .next .ground{background: #4e4e4e;}
 
 .object4 .previous .sky{background: linear-gradient(0deg, #ffffff, #f3ff00, #ffcc00);}
@@ -435,9 +435,9 @@ body{
 .object7 .next .sky{background: linear-gradient(0deg, #00abff, #004bff);}
 .object7 .next .ground{background: transparent;}
 
-.object8 .previous .sky{background: gray;}
+.object8 .previous .sky{background: #00ea4d;}
 .object8 .previous .ground{background: transparent;}
-.object8 .next .sky{background: gray;}
+.object8 .next .sky{background: #ff810b;}
 .object8 .next .ground{background: transparent;}
 
 /********** POPUP **********/
