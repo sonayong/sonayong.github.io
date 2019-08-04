@@ -269,23 +269,24 @@ body{
     top: 0;
     left: 0;
     background: transparent;
-       overflow: hidden;
 }
-
+/*
 .bighouse{
 	position: absolute;
     width: 63.3vw;
+    top: -14.39vw;
     left: 50%;
     transform: translateX(-50%);
+    transition: all 2s;
 }
 
 .bighouse .w{
 	fill: yellow;
-}
+}*/
 
 .house {
     position: absolute;
-    width: 80vh;
+    width: 40vw;
     height: auto;
     top: 50%;
     left: 50%;
@@ -391,9 +392,9 @@ body{
 .seventh{transform: rotate(1260deg);}
 .eighth{transform: rotate(1440deg);}
 /******************** background color ********************/
-.object1 .previous .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #00d3ff, #006eff);}
+.object1 .previous .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #ffd200, #96c3ff);}
 .object1 .previous .ground{background: transparent;}
-.object1 .next .sky{background: linear-gradient(0deg, #d3d0ff, #d3d0ff, #867eff, #0069ff, #000833);}
+.object1 .next .sky{background: linear-gradient(0deg, #d3d0ff, #d3d0ff, #867eff, #020e1f, #000833);}
 .object1 .next .ground{background: transparent;}
 
 /*.object2 .previous .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #00d3ff, #006eff);}
@@ -410,16 +411,17 @@ body{
 
 .object3 .previous .sky{background: linear-gradient(0deg, yellow, yellow, yellow, yellow, yellow, yellow, #ffacbb, #ff9500);}
 .object3 .previous .ground{background: #006cff;}
-.object3 .next .sky{background: linear-gradient(0deg, #ffffff, #b1b1b1, #2f2f2f);}
+.object3 .next .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #00d3ff, #006eff);}
 .object3 .next .ground{background: #404040;}
 
 .object4 .previous .sky{background: linear-gradient(0deg, #ffffff, #f3ff00, #ffcc00);}
 .object4 .previous .ground{background: #24ff39;}
-.object4 .next .sky{background: linear-gradient(0deg, #ffffff, #b1b1b1, #2f2f2f);}
-.object4 .next .ground{background: #404040;}
+.object4 .next .sky{background: linear-gradient(0deg, #ffffff, #f3ff00, #ffcc00);}
+.object4 .next .ground{background: #24ff39;}
+.object4 .next .house{transition: all 2s;}
 
 .object5 .previous .sky{background: #e9e9e9;}
-.object5 .previous .ground{background: #90714e;}
+.object5 .previous .ground{background: #a9a9a9;}
 .object5 .next .sky{background: #e9e9e9;}
 .object5 .next .ground{background: #a9a9a9;}
 
@@ -683,10 +685,14 @@ body{
 
 		@keyframes panfan{
 		0%{
-			background: rgba(100,100,100,0.9);
+			background: rgba(0,0,0,1);
 		}
 
 		25%{
+			background: rgba(100,100,100,0.9);
+		}
+
+		50%{
 			background: rgba(100,100,100,0.5)
 		}
 
@@ -718,7 +724,11 @@ body{
 			background: rgba(100,100,100,0.5)
 		}
 
-		100%{
+		75%{
 			background: rgba(100,100,100,0.9);
+		}
+
+		100%{
+			background: rgba(0,0,0,1);
 		}
 	}
