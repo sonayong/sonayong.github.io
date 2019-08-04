@@ -605,7 +605,6 @@ body{
 		filter: blur(0px);
 		/*transform: translate(-50%, -50%);*/ 
 		animation-name: steam;
-		animation-delay: 3s;
 		animation-duration: 6s;
 		animation-fill-mode: forwards;
 		animation-play-state: paused;
@@ -620,7 +619,6 @@ body{
 		background: rgba(255,255,255,0);
 		z-index: 4;
 		animation-name: hot;
-		animation-delay: 3s;
 		animation-duration: 3s;
 		animation-fill-mode: forwards;
 		animation-play-state: paused;
