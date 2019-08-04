@@ -392,9 +392,9 @@ body{
 .seventh{transform: rotate(1260deg);}
 .eighth{transform: rotate(1440deg);}
 /******************** background color ********************/
-.object1 .previous .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #ffd200, #96c3ff);}
+.object1 .previous .sky{background: linear-gradient(0deg, #fffb4e, #ffd200);}
 .object1 .previous .ground{background: transparent;}
-.object1 .next .sky{background: linear-gradient(0deg, #d3d0ff, #d3d0ff, #867eff, #020e1f, #000833);}
+.object1 .next .sky{background: linear-gradient(0deg, #020e1f, #000833);}
 .object1 .next .ground{background: transparent;}
 
 /*.object2 .previous .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #00d3ff, #006eff);}
@@ -406,13 +406,13 @@ body{
 .object2 .ground{background: #2dc700;}
 .object2 .previous .sky{background: #006eff;}
 .object2 .previous .ground{background: #2dc700;}
-.object2 .next .sky{background: linear-gradient(0deg, #ffffff, #b1b1b1, #2f2f2f);}
-.object2 .next .ground{background: #1c7b00;}
+.object2 .next .sky{background: #006eff;}
+.object2 .next .ground{background: #2dc700;}
 
-.object3 .previous .sky{background: linear-gradient(0deg, yellow, yellow, yellow, yellow, yellow, yellow, #ffacbb, #ff9500);}
-.object3 .previous .ground{background: #006cff;}
-.object3 .next .sky{background: linear-gradient(0deg, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #00d3ff, #006eff);}
-.object3 .next .ground{background: #404040;}
+.object3 .previous .sky{background: linear-gradient(0deg, yellow, yellow, yellow, #d1f0ff, #88e6ff, #77cbff, #00b8ff);}
+.object3 .previous .ground{background: #4e4e4e;}
+.object3 .next .sky{background: linear-gradient(0deg, yellow, yellow, yellow, #d1f0ff, #88e6ff, #77cbff, #00b8ff);}
+.object3 .next .ground{background: #4e4e4e;}
 
 .object4 .previous .sky{background: linear-gradient(0deg, #ffffff, #f3ff00, #ffcc00);}
 .object4 .previous .ground{background: #24ff39;}
@@ -430,9 +430,9 @@ body{
 .object6 .next .sky{background: #e9e9e9;}
 .object6 .next .ground{background: #ccc;}
 
-.object7 .previous .sky{background: linear-gradient(90deg, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ffffff, #ff0000);}
+.object7 .previous .sky{background: linear-gradient(0deg, #ff6c00, #ff1d00);}
 .object7 .previous .ground{background: transparent;}
-.object7 .next .sky{background: linear-gradient(0deg, #ff0000, #ff0000, #ff0000, #ff0000, #ffffff, #004bff, #004bff);}
+.object7 .next .sky{background: linear-gradient(0deg, #00abff, #004bff);}
 .object7 .next .ground{background: transparent;}
 
 .object8 .previous .sky{background: gray;}
